@@ -1,0 +1,18 @@
+Welcome to OpenRL's documentation!
+=====================================
+
+.. image::
+   images/openrl.png
+   :width: 100
+   :align: center
+
+`中文文档 </zh/latest/index.html>`_
+
+.. |GitHub stars| image:: https://img.shields.io/github/stars/OpenRL-Lab/openrl.svg?style=social&label=Star&maxAge=2592000
+   :target: https://github.com/OpenRL-Lab/openrl
+
+.. toctree::
+   :maxdepth: 2
+   :caption: User Guide
+
+   00_intro/index
