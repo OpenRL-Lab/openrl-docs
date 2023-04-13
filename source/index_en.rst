@@ -6,7 +6,7 @@ Welcome to OpenRL's documentation!
    :width: 100
    :align: center
 
-`中文文档 </zh/latest/index.html>`_
+`中文文档 </zh/latest/index.html>`_ | `GitHub <https://github.com/OpenRL-Lab/openrl>`_
 
 .. |GitHub stars| image:: https://img.shields.io/github/stars/OpenRL-Lab/openrl.svg?style=social&label=Star&maxAge=2592000
    :target: https://github.com/OpenRL-Lab/openrl

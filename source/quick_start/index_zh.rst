@@ -4,4 +4,5 @@
 .. toctree::
    :maxdepth: 2
 
-   install_zh
+   install
+   hello_world
