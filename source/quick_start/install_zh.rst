@@ -29,3 +29,15 @@ OpenRL支持目前主流的操作系统如：Ubuntu, MacOS, Windows, CentOS等�
     git clone https://github.com/OpenRL-Lab/openrl.git
     cd openrl
     pip install .
+
+版本查看
+--------------
+
+在命令行执行以下命令，可以查看当前安装的OpenRL版本：
+
+.. code-block:: bash
+
+    openrl --version
+
+
+
