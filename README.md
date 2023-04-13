@@ -20,4 +20,4 @@ English document：
 
 # Contact Us
 
-文档有问题，请联系我们：`contact@openrl.cn`
+文档有问题，请联系我们：`huangshiyu@4paradigm.com`
