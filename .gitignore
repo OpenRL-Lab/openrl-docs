@@ -154,5 +154,7 @@ dmypy.json
 cython_debug/
 .idea/
 .DS_Store
-source/index.rst
+**.rst
+!*_zh.rst
+!*_en.rst
 # End of https://www.toptal.com/developers/gitignore/api/python,jupyternotebooks

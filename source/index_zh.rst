@@ -15,4 +15,5 @@
    :maxdepth: 2
    :caption: 用户指南
 
-   00_intro/index
+   intro/index
+   quick_start/index
