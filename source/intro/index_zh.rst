@@ -17,15 +17,17 @@ OpenRL 是由第四范式强化学习团队开发的基于PyTorch的强化学习
 
 5. 支持LSTM，GRU，Transformer等模型。
 
-6. 支持 `gymnasium <https://gymnasium.farama.org/>`_ 环境。
+6. 支持多种训练加速，例如：混合精度训练，半精度策略网络收集数据等。
 
-7. 支持词典类型的观测输入。
+7. 支持 `gymnasium <https://gymnasium.farama.org/>`_ 环境。
 
-8. 支持 `wandb <https://wandb.ai/>`_ (更多请查看 `wandb知乎教程 <https://www.zhihu.com/column/c_1494418493903155200>`_)和 `tensorboardX <https://tensorboardx.readthedocs.io/en/latest/index.html>`_ 等主流机器学习训练可视化平台。
+8. 支持词典类型的观测输入。
 
-9. 支持环境的串行和并行训练，同时保证两种模式下的训练效果一致。
+9. 支持 `wandb <https://wandb.ai/>`_ (更多请查看 `wandb知乎教程 <https://www.zhihu.com/column/c_1494418493903155200>`_)和 `tensorboardX <https://tensorboardx.readthedocs.io/en/latest/index.html>`_ 等主流机器学习训练可视化平台。
 
-10. 提供代码覆盖测试和单元测试。
+10. 支持环境的串行和并行训练，同时保证两种模式下的训练效果一致。
+
+11. 提供代码覆盖测试和单元测试。
 
 在接下来的 `快速上手 <../quick_start/index.html>`_ 中，我们将介绍如何安装OpenRL框架，
 并通过简单的例子来说明如何使用OpenRL。

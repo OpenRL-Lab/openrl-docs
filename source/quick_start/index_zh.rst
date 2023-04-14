@@ -6,3 +6,4 @@
 
    install
    hello_world
+   multi_agent_RL

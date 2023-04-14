@@ -12,6 +12,7 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
+
 import os
 import sys
 from shutil import copyfile
@@ -76,7 +77,10 @@ def copy_files(lang):
             copyfile(file, file.parent / file.name.replace("_{}".format(lang), ""))
 
 
-if os.environ.get("READTHEDOCS") == "True":
+if (
+    os.environ.get("READTHEDOCS") == "True"
+    or os.environ.get("READTHEDOCS_LOC") == "True"
+):
     lang = os.environ.get("READTHEDOCS_LANGUAGE")
     lang = lang.split("_")[0] if lang else None
     current_dir = Path("./")
@@ -111,7 +115,7 @@ import pytorch_sphinx_theme
 html_theme = "pytorch_sphinx_theme"
 html_theme_path = [pytorch_sphinx_theme.get_html_theme_path()]
 html_theme_options = {
-    "logo_url": "https://hsy-test-docs.readthedocs.io/{}/latest/".format(rtd_lang),
+    "logo_url": "https://openrl-docs.readthedocs.io/{}/latest/".format(rtd_lang),
     "menu": [
         {"name": "GitHub", "url": "https://github.com/OpenRL-Lab/openrl"},
     ],
