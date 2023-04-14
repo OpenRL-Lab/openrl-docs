@@ -29,3 +29,18 @@ OpenRL 是由第四范式强化学习团队开发的基于PyTorch的强化学习
 
 在接下来的 `快速上手 <../quick_start/index.html>`_ 中，我们将介绍如何安装OpenRL框架，
 并通过简单的例子来说明如何使用OpenRL。
+
+Citing OpenRL
+------------------------
+
+如果我们的工作对你有帮助，欢迎引用我们:
+
+.. code-block:: bibtex
+
+    @misc{openrl2023,
+        title={OpenRL},
+        author={OpenRL Contributors},
+        publisher = {GitHub},
+        howpublished = {\url{https://github.com/OpenRL-Lab/openrl}},
+        year={2023},
+    }

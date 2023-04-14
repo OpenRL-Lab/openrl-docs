@@ -64,6 +64,13 @@ OpenRL为用户提供了一个简单易用的使用方式，这里我们以 `Car
 在终端执行 python train_ppo.py，即可开始训练并进行可视化测试。
 ``train_ppo.py`` 代码也可以从 `openrl/examples <https://github.com/OpenRL-Lab/openrl/blob/main/examples/cartpole/train_ppo.py>`_ 处下载。
 
+运行演示：
+
+.. image::
+    images/train_ppo_cartpole.gif
+    :width: 1000
+    :align: center
+
 .. note::
 
     如果用户在服务器上执行测试代码，将无法看到可视化界面。
