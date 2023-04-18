@@ -14,3 +14,4 @@
 
    intro/index
    quick_start/index
+   api_docs/openrl

@@ -15,4 +15,6 @@ Welcome to OpenRL's documentation!
    :maxdepth: 2
    :caption: User Guide
 
-   00_intro/index
+   intro/index
+   quick_start/index
+   api_docs/openrl
