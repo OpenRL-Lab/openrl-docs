@@ -155,5 +155,8 @@ cython_debug/
 .idea/
 .DS_Store
 
-
+source/api_docs/
+source/intro/
+source/quick_start/
+source/index.rst
 # End of https://www.toptal.com/developers/gitignore/api/python,jupyternotebooks

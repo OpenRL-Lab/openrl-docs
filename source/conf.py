@@ -64,7 +64,7 @@ templates_path = ["_templates"]
 source_suffix = ".rst"
 
 
-master_doc = "source_files/index"
+master_doc = "index"
 print("READTHEDOCS:", os.environ.get("READTHEDOCS"))
 print("READTHEDOCS_LANGUAGE:", os.environ.get("READTHEDOCS_LANGUAGE"))
 # exit()
