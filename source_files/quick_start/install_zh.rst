@@ -39,5 +39,5 @@ OpenRL支持目前主流的操作系统如：Ubuntu, MacOS, Windows, CentOS等�
 
     openrl --version
 
-
+接下来，我们将会通过一个 `简单的例子 <../quick_start/hello_world.html>`_ 来介绍如何使用OpenRL。
 
