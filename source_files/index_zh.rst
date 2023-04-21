@@ -2,8 +2,8 @@
 =====================================
 
 .. image::
-   images/openrl.png
-   :width: 200
+   images/openrl_text.png
+   :width: 400
    :align: center
 
 `English </en/latest/index.html>`_ | `GitHub <https://github.com/OpenRL-Lab/openrl>`_
