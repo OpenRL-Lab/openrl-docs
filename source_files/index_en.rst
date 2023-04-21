@@ -2,8 +2,8 @@ Welcome to OpenRL's documentation!
 =====================================
 
 .. image::
-   images/openrl.png
-   :width: 100
+   images/openrl_text.png
+   :width: 400
    :align: center
 
 `中文文档 </zh/latest/index.html>`_ | `GitHub <https://github.com/OpenRL-Lab/openrl>`_
@@ -16,4 +16,4 @@ Welcome to OpenRL's documentation!
    :caption: User Guide
 
    intro/index
-   api_docs/openrl
+   quick_start/index
