@@ -17,3 +17,4 @@ Welcome to OpenRL's documentation!
 
    intro/index
    quick_start/index
+   api_docs/openrl
