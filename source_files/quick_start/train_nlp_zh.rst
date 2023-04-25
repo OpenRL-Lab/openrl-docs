@@ -280,7 +280,7 @@ OpenRL训练结果
 
 下表格展示了使用OpenRL训练该对话任务的结果。结果显示使用强化学习训练后，模型各项指标皆有所提升。
 另外，从下表可以看出，相较于 `RL4LMs <https://github.com/allenai/RL4LMs>`_ ，
-OpenRL的训练速度更快（提升 xx% ），最终的性能指标也更好。
+OpenRL的训练速度更快（在同样3090显卡的机器上，速度提升 xx% ），最终的性能指标也更好。
 
 =============== ======== ======== ========  ========= ============ ======= ========== ================ =========== =================
                  FPS     Rouge-1   Rouge-2   Rouge-L   Rouge-Lsum   Meteor  SacreBLEU  Intent Accuracy  perplexity  mean_pred_length
