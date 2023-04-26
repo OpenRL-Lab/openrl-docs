@@ -307,7 +307,7 @@ OpenRL          **13.20(+17%)**  **0.181(+10%)**  **0.153(+12%)**  **0.292(+25%)
             input_text = input("> User: ")
             if input_text == "quit":
                 break
-            elif input_text in "reset":
+            elif input_text == "reset":
                 history = []
                 print("Welcome to OpenRL!")
                 continue
