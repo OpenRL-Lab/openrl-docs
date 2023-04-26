@@ -32,7 +32,7 @@ DailyDialog任务介绍
     pip install "openrl[nlp]"
 
 和前面介绍过的使用教程（`MPE <./multi_agent_RL.html>`_ ）一样，
-我们首先需要编写一个 `train_ppo.py` 文件，编写以下训练代码：
+我们首先需要编写一个 ``train_ppo.py`` 文件，编写以下训练代码：
 
 .. code-block:: python
 
@@ -58,29 +58,29 @@ DailyDialog任务介绍
     if __name__ == "__main__":
         train()
 
-然后，我们可以创建一个配置文件 `nlp_ppo.yaml` ，并加入以下内容:
+然后，我们可以创建一个配置文件 ``nlp_ppo.yaml`` ，并加入以下内容:
 
 .. code-block:: yaml
 
     # nlp_ppo.yaml
     data_path: daily_dialog # 数据集路径
     env: # 环境所用到的参数
-        args: {'tokenizer_path': 'gpt2'} # 读取tokenizer的路径
+        args: {"tokenizer_path": gpt2} # 读取tokenizer的路径
     seed: 0 # 设置seed，保证每次实验结果一致
     lr: 1e-6 # 设置policy模型的学习率
     critic_lr: 1e-6 # 设置critic模型的学习率
     episode_length: 20 # 设置每个episode的长度
     use_recurrent_policy: true
 
-从上面配置文件可以看出，训练NLP任务需要额外设置 数据集的名称 data_path 和 环境参数env.args 。
-其中，data_path 可以设置为 Hugging Face数据集名称 或者 本地数据集路径。
-此外，环境参数中的 tokenizer_path 用于指定加载文字编码器的 Hugging Face名称 或者 本地路径。
+从上面配置文件可以看出，训练NLP任务需要额外设置 数据集的名称 ``data_path`` 和 环境参数 ``env.args`` 。
+其中，``data_path`` 可以设置为 Hugging Face数据集名称 或者 本地数据集路径。
+此外，环境参数中的 ``tokenizer_path`` 用于指定加载文字编码器的 Hugging Face名称 或者 本地路径。
 
 使用 Hugging Face 的模型进行训练
 --------------------------------
 
 在OpenRL中，我们可以使用 Hugging Face 上的模型来进行训练。
-为了加载Hugging Face上的模型，我们首先需要在配置文件`nlp_ppo.yaml`中添加以下内容：
+为了加载Hugging Face上的模型，我们首先需要在配置文件 ``nlp_ppo.yaml`` 中添加以下内容：
 
 .. code-block:: yaml
 
@@ -97,7 +97,7 @@ DailyDialog任务介绍
     episode_length: 128 # 设置每个episode的长度
     num_mini_batch: 20
 
-然后需要在train_ppo.py中添加以下代码：
+然后需要在 ``train_ppo.py`` 中添加以下代码：
 
 .. code-block:: python
 
@@ -131,12 +131,12 @@ DailyDialog任务介绍
 
 .. note::
 
-     上面这个例子中，我们使用了PolicyValueNetworkGPT这个模型。
-     OpenRL还支持用户自定义模型（例如自定模型为CustomedPolicyValueNetwork），然后通过
+     上面这个例子中，我们使用了 ``PolicyValueNetworkGPT`` 这个模型。
+     OpenRL还支持用户自定义模型（例如自定模型为 ``CustomPolicyValueNetwork`` ），然后通过
 
      .. code-block:: python
 
-         model_dict = {"model": CustomedPolicyValueNetwork}
+         model_dict = {"model": CustomPolicyValueNetwork}
          net = Net(env, model_dict=model_dict)
 
     的方式传入训练网络。如果想要分别实现策略网络和价值网络，可以通过
@@ -144,8 +144,8 @@ DailyDialog任务介绍
      .. code-block:: python
 
          model_dict = {
-             "policy": CustomedPolicyNetwork,
-             "critic": CustomedValueNetwork,
+             "policy": CustomPolicyNetwork,
+             "critic": CustomValueNetwork,
          }
          net = Net(env, model_dict=model_dict)
 
@@ -165,7 +165,7 @@ DailyDialog任务介绍
 
 我们最终的奖励为以上三个奖励的加权和，其中 **KL散度奖励** 的系数是随着KL散度的大小动态变化的。
 
-想在OpenRL中使用该奖励模型，用户无需修改训练代码，只需要在 `nlp_ppo.yaml` 文件中添加reward_class参数即可：
+想在OpenRL中使用该奖励模型，用户无需修改训练代码，只需要在 ``nlp_ppo.yaml`` 文件中添加 ``reward_class`` 参数即可：
 
 .. code-block:: yaml
 
@@ -176,7 +176,7 @@ DailyDialog任务介绍
             # 用于意图判断的模型的名称或路径
             "intent_model": rajkumarrrk/roberta-daily-dialog-intent-classifier,
             # 用于计算KL散度的预训练模型的名称或路径
-            "ref_model": roberta-base, # 用于意图判断的tokenizer的名称或路径
+            "ref_model": rajkumarrrk/gpt2-fine-tuned-on-daily-dialog,
         }
 
     model_path: rajkumarrrk/gpt2-fine-tuned-on-daily-dialog # 预训练模型路径
@@ -194,35 +194,35 @@ DailyDialog任务介绍
 
     OpenRL支持用户使用自定义的奖励模型。
     首先，用户需要编写自定义奖励模型(需要继承 `BaseReward <https://github.com/OpenRL-Lab/openrl/blob/main/openrl/rewards/base_reward.py>`_ 类)。
-    接着，用户需要注册自定义的奖励模型，即在train_ppo.py添加以下代码：
+    接着，用户需要注册自定义的奖励模型，即在 ``train_ppo.py`` 添加以下代码：
 
     .. code-block:: python
 
         # train_ppo.py
-        from openrl.rewards.nlp_reward import CustomedReward
+        from openrl.rewards.nlp_reward import CustomReward
         from openrl.rewards import RewardFactory
-        RewardFactory.register("CustomedReward", CustomedReward)
+        RewardFactory.register("CustomReward", CustomReward)
 
-    最后，用户需要在nlp_ppo.yaml中填写自定义的奖励模型即可：
+    最后，用户需要在 ``nlp_ppo.yaml`` 中填写自定义的奖励模型即可：
 
     .. code-block:: yaml
 
         reward_class:
-            id: "CustomedReward" # 自定义奖励模型名称
-            args: {} # 用户自定义奖励函数可能用到的参数
+            id: "CustomReward" # 自定义奖励模型名称
+            args: {} # 用户自定义奖励模型可能用到的参数
 
 自定义wandb输出
 ----------------
 
 OpenRL还支持用户自定义wandb和tensorboard的输出内容。
 例如，在该任务的训练过程中，我们还需要输出各种类型奖励的信息和KL散度系数的信息，
-用户可以在nlp_ppo.yaml文件中加入vec_info_class参数来实现:
+用户可以在 ``nlp_ppo.yaml`` 文件中加入 ``vec_info_class`` 参数来实现:
 
 .. code-block:: yaml
 
     # nlp_ppo.yaml
     vec_info_class:
-        id: "NLPVecInfo" # 调用NLPVecInfo类以打印NLP任务中奖励函数的信息
+        id: "NLPVecInfo" # 调用NLPVecInfo类以打印NLP任务中的奖励信息
     #设置wandb信息
     wandb_entity: openrl # 这里用于指定wandb团队名称，请把openrl替换为你自己的团队名称
     experiment_name: train_nlp # 这里用于指定实验名称
@@ -230,14 +230,14 @@ OpenRL还支持用户自定义wandb和tensorboard的输出内容。
     log_interval: 1 # 这里用于指定每隔多少个episode上传一次wandb数据
     # 自行填写其他参数...
 
-修改完配置文件后，在train_ppo.py文件中启用wandb:
+修改完配置文件后，在 ``train_ppo.py`` 文件中启用wandb:
 
 .. code-block:: python
 
     # train_ppo.py
     agent.train(total_time_steps=100000, use_wandb=True)
 
-然后执行python train_ppo.py --config nlp_ppo.yaml，过一会儿，便可以在wandb中看到如下的输出:
+然后执行 **python train_ppo.py --config nlp_ppo.yaml** ，过一会儿，便可以在wandb中看到如下的输出:
 
 .. image::
     images/nlp_wandb.png
@@ -247,22 +247,22 @@ OpenRL还支持用户自定义wandb和tensorboard的输出内容。
 从上图可以看到，wandb输出了各种类型奖励的信息和KL散度系数的信息。
 
 如果用户还需要输出其他信息，还可以参考 `NLPVecInfo <https://github.com/OpenRL-Lab/openrl/blob/main/openrl/envs/vec_env/wrappers/vec_info.py>`_ 类
-和 `VecInfo <https://github.com/OpenRL-Lab/openrl/blob/main/openrl/envs/vec_env/wrappers/vec_info.py>`_ 类来实现自己的CustomedVecInfo类。
-然后，需要在train_ppo.py中注册自定义的CustomedVecInfo类:
+和 `VecInfo <https://github.com/OpenRL-Lab/openrl/blob/main/openrl/envs/vec_env/wrappers/vec_info.py>`_ 类来实现自己的 ``CustomVecInfo`` 类。
+然后，需要在 ``train_ppo.py`` 中注册自定义的 ``CustomVecInfo`` 类:
 
 .. code-block:: python
 
     # train_ppo.py
     # 注册自定义输出信息类
-    VecInfoFactory.register("CustomedVecInfo", CustomedVecInfo)
+    VecInfoFactory.register("CustomVecInfo", CustomVecInfo)
 
-最后，只需要在nlp_ppo.yaml中填写CustomedVecInfo类即可：
+最后，只需要在 ``nlp_ppo.yaml`` 中填写 ``CustomVecInfo`` 类即可：
 
 .. code-block:: yaml
 
     # nlp_ppo.yaml
     vec_info_class:
-        id: "CustomedVecInfo" # 调用自定义CustomedVecInfo类以输出自定义信息
+        id: "CustomVecInfo" # 调用自定义CustomVecInfo类以输出自定义信息
 
 使用混合精度训练加速
 --------------------
