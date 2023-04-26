@@ -289,3 +289,38 @@ OpenRL的训练速度更快（在同样3090显卡的机器上，速度提升 17.
 RL4LMs          11.26            0.169            0.144            0.198           0.071            **0.455**        18.83
 OpenRL          **13.20(+17%)**  **0.181(+10%)**  **0.153(+12%)**  **0.292(+25%)** **0.090(+43%)**  0.435(+1.9%)     18.69
 =============== ================ ================ ================ =============== ================ ================ =================
+
+和训练好的智能体进行对话
+---------------
+
+对于训练好的智能体，用户可以方便地通过 ``agent.chat()`` 接口进行对话：
+
+.. code-block:: python
+
+    # chat.py
+    from openrl.runners.common import ChatAgent as Agent
+    def chat():
+        agent = Agent.load("./ppo_agent", tokenizer="gpt2",)
+        history = []
+        print("Welcome to OpenRL!")
+        while True:
+            input_text = input("> User: ")
+            if input_text == "quit":
+                break
+            elif input_text in "reset":
+                history = []
+                print("Welcome to OpenRL!")
+                continue
+            response = agent.chat(input_text, history)
+            print(f"> OpenRL Agent: {response}")
+            history.append(input_text)
+            history.append(response)
+    if __name__ == "__main__":
+        chat()
+
+执行 **python chat.py** ，便可以和训练好的智能体进行对话了：
+
+.. image::
+    images/chat.gif
+    :width: 800
+    :align: center
