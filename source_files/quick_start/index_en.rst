@@ -7,3 +7,4 @@ Quick Start Guide
    install
    hello_world
    multi_agent_RL
+   train_nlp
