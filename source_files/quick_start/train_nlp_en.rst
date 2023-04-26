@@ -298,3 +298,40 @@ Supervised Learning None             0.164            0.137            0.234    
 RL4LMs              11.26            0.169            0.144            0.198           0.071            **0.455**        18.83
 OpenRL              **13.20(+17%)**  **0.181(+10%)**  **0.153(+12%)**  **0.292(+25%)** **0.090(+43%)**  0.435(+1.9%)     18.69
 =================== ================ ================ ================ =============== ================ ================ ==================
+
+
+
+Chat with Trained Agent
+---------------
+
+For a trained agent, users can easily engage in conversation through the ``agent.chat()`` function:
+
+.. code-block:: python
+
+    # chat.py
+    from openrl.runners.common import ChatAgent as Agent
+    def chat():
+        agent = Agent.load("./ppo_agent", tokenizer="gpt2",)
+        history = []
+        print("Welcome to OpenRL!")
+        while True:
+            input_text = input("> User: ")
+            if input_text == "quit":
+                break
+            elif input_text in "reset":
+                history = []
+                print("Welcome to OpenRL!")
+                continue
+            response = agent.chat(input_text, history)
+            print(f"> OpenRL Agent: {response}")
+            history.append(input_text)
+            history.append(response)
+    if __name__ == "__main__":
+        chat()
+
+Execute **python chat.py** to start a conversation with the trained agent:
+
+.. image::
+    images/chat.gif
+    :width: 800
+    :align: center
