@@ -318,7 +318,7 @@ For a trained agent, users can easily engage in conversation through the ``agent
             input_text = input("> User: ")
             if input_text == "quit":
                 break
-            elif input_text in "reset":
+            elif input_text == "reset":
                 history = []
                 print("Welcome to OpenRL!")
                 continue
