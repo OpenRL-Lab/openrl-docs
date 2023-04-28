@@ -11,18 +11,11 @@ Subpackages
    openrl.buffers
    openrl.cli
    openrl.configs
-   openrl.datasets
    openrl.drivers
    openrl.envs
    openrl.modules
+   openrl.rewards
    openrl.runners
    openrl.supports
    openrl.utils
 
-Module contents
----------------
-
-.. automodule:: openrl
-   :members:
-   :undoc-members:
-   :show-inheritance:

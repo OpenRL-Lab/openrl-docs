@@ -10,6 +10,7 @@ Subpackages
    openrl.envs.common
    openrl.envs.gymnasium
    openrl.envs.mpe
+   openrl.envs.nlp
    openrl.envs.vec_env
    openrl.envs.wrappers
 

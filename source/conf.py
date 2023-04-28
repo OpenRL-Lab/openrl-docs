@@ -18,8 +18,11 @@ import sys
 from shutil import copyfile
 from pathlib import Path
 
+release = "0.0.6"
+
 sys.path.insert(0, os.path.abspath("../../"))
 print(sys.path)
+
 f = os.popen("make -f diagrams_source.mk")
 for item in f.readlines():
     print(f)
@@ -33,7 +36,7 @@ author = "OpenRL Contributors"
 # The short X.Y version
 version = ""
 # The full version, including alpha/beta/rc tags
-release = "0.0.2"
+
 
 # -- General configuration ---------------------------------------------------
 

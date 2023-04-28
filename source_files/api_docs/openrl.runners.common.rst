@@ -12,6 +12,14 @@ openrl.runners.common.base\_agent module
    :undoc-members:
    :show-inheritance:
 
+openrl.runners.common.chat\_agent module
+----------------------------------------
+
+.. automodule:: openrl.runners.common.chat_agent
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 openrl.runners.common.ppo\_agent module
 ---------------------------------------
 

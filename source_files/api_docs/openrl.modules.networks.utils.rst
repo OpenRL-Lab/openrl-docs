@@ -1,16 +1,16 @@
 openrl.modules.networks.utils package
 =====================================
 
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   openrl.modules.networks.utils.nlp
+
 Submodules
 ----------
-
-openrl.modules.networks.utils.FcEncoder module
-----------------------------------------------
-
-.. automodule:: openrl.modules.networks.utils.FcEncoder
-   :members:
-   :undoc-members:
-   :show-inheritance:
 
 openrl.modules.networks.utils.act module
 ----------------------------------------
@@ -76,14 +76,6 @@ openrl.modules.networks.utils.popart module
    :undoc-members:
    :show-inheritance:
 
-openrl.modules.networks.utils.pre\_model\_util module
------------------------------------------------------
-
-.. automodule:: openrl.modules.networks.utils.pre_model_util
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 openrl.modules.networks.utils.rnn module
 ----------------------------------------
 
@@ -104,14 +96,6 @@ openrl.modules.networks.utils.util module
 -----------------------------------------
 
 .. automodule:: openrl.modules.networks.utils.util
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-openrl.modules.networks.utils.utils module
-------------------------------------------
-
-.. automodule:: openrl.modules.networks.utils.utils
    :members:
    :undoc-members:
    :show-inheritance:

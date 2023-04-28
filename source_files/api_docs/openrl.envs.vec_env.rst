@@ -8,6 +8,7 @@ Subpackages
    :maxdepth: 4
 
    openrl.envs.vec_env.utils
+   openrl.envs.vec_env.vec_info
    openrl.envs.vec_env.wrappers
 
 Submodules
