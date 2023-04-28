@@ -44,6 +44,9 @@
 
 此外，为了保存训练完成后的智能体，我们使用了agent.save()函数，将智能体保存在"./ppo_agent/"文件夹中。
 
+.. tip::
+
+    用户可以在 `openrl/example <https://github.com/OpenRL-Lab/openrl/tree/main/examples/mpe>`_ 里找到该部分的示例代码。
 
 通过配置文件修改训练参数
 ------
