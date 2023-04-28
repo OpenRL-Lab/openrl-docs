@@ -46,13 +46,13 @@ DailyDialog任务介绍
         cfg_parser = create_config_parser()
         cfg = cfg_parser.parse_args()
         # 创建 NLP 环境
-        env = make("daily_dialog",env_num=2,asynchronous=True,cfg=cfg,)
+        env = make("daily_dialog",env_num=2,asynchronous=True,cfg=cfg)
         # 创建 神经网络
         net = Net(env, cfg=cfg, device="cuda")
         # 创建训练智能体
         agent = Agent(net)
         # 开始训练
-        agent.train(total_time_steps=5000000)
+        agent.train(total_time_steps=100000)
         # 保存训练完成的智能体
         agent.save("./ppo_agent/")
     if __name__ == "__main__":
@@ -63,18 +63,20 @@ DailyDialog任务介绍
 .. code-block:: yaml
 
     # nlp_ppo.yaml
-    data_path: daily_dialog # 数据集路径
     env: # 环境所用到的参数
-        args: {"tokenizer_path": gpt2} # 读取tokenizer的路径
+        args: {
+            "tokenizer_path": gpt2, # 读取tokenizer的路径
+            "data_path": daily_dialog # 数据集路径
+        } 
     seed: 0 # 设置seed，保证每次实验结果一致
     lr: 1e-6 # 设置policy模型的学习率
     critic_lr: 1e-6 # 设置critic模型的学习率
     episode_length: 20 # 设置每个episode的长度
     use_recurrent_policy: true
 
-从上面配置文件可以看出，训练NLP任务需要额外设置 数据集的名称 ``data_path`` 和 环境参数 ``env.args`` 。
-其中，``data_path`` 可以设置为 Hugging Face数据集名称 或者 本地数据集路径。
-此外，环境参数中的 ``tokenizer_path`` 用于指定加载文字编码器的 Hugging Face名称 或者 本地路径。
+从上面配置文件可以看出，训练NLP任务需要额外设置 环境参数 ``env.args``。
+其中，环境参数中的 ``data_path`` 可以设置为 Hugging Face数据集名称 或者 本地数据集路径。
+而 ``tokenizer_path`` 则用于指定加载文字编码器的 Hugging Face名称 或者 本地路径。
 
 使用 Hugging Face 的模型进行训练
 --------------------------------
@@ -89,9 +91,11 @@ DailyDialog任务介绍
     use_share_model: true # 策略网络和价值网络是否共享模型
     ppo_epoch: 5 # ppo训练迭代次数
 
-    data_path: daily_dialog # 数据集名称或者路径
     env: # 环境所用到的参数
-        args: {'tokenizer_path': 'gpt2'} # 读取tokenizer的路径
+        args: {
+            "tokenizer_path": gpt2, # 读取tokenizer的路径
+            "data_path": daily_dialog # 数据集路径
+        } 
     lr: 1e-6 # 设置policy模型的学习率
     critic_lr: 1e-6 # 设置critic模型的学习率
     episode_length: 128 # 设置每个episode的长度
@@ -114,14 +118,14 @@ DailyDialog任务介绍
         cfg_parser = create_config_parser()
         cfg = cfg_parser.parse_args()
         # 创建 NLP 环境
-        env = make("daily_dialog",env_num=2,asynchronous=True,cfg=cfg,)
+        env = make("daily_dialog",env_num=2,asynchronous=True,cfg=cfg)
         # 创建 神经网络
         model_dict = {"model": PolicyValueNetwork}
         net = Net(env, cfg=cfg, model_dict=model_dict)
         # 创建训练智能体
         agent = Agent(net)
         # 开始训练
-        agent.train(total_time_steps=5000000)
+        agent.train(total_time_steps=100000)
         # 保存训练完成的智能体
         agent.save("./ppo_agent/")
     if __name__ == "__main__":
@@ -182,9 +186,11 @@ DailyDialog任务介绍
     model_path: rajkumarrrk/gpt2-fine-tuned-on-daily-dialog # 预训练模型路径
     use_share_model: true
     ppo_epoch: 5 # ppo训练迭代次数
-    data_path: daily_dialog # 数据集名称或者路径
     env: # 环境所用到的参数
-        args: {"tokenizer_path": gpt2} # 读取tokenizer的路径
+        args: {
+            "tokenizer_path": gpt2, # 读取tokenizer的路径
+            "data_path": daily_dialog # 数据集路径
+        } 
     lr: 1e-6 # 设置policy模型的学习率
     critic_lr: 1e-6 # 设置critic模型的学习率
     episode_length: 128 # 设置每个episode的长度
@@ -275,6 +281,13 @@ OpenRL还提供了一键开启混合精度训练的功能。用户只需要在�
     use_amp: true # 开启混合精度训练
 
 
+.. tip::
+
+    用户可以在 `train_ppo.py <https://github.com/OpenRL-Lab/openrl/blob/main/examples/nlp/train_ppo.py>`_ 里找到训练nlp任务的示例代码。
+    并在 `nlp_ppo.yaml <https://github.com/OpenRL-Lab/openrl/blob/main/examples/nlp/nlp_ppo.yaml>`_ 里找到训练nlp任务的各项参数。
+    用户可以执行 python train_ppo.py --config nlp_ppo.yaml 指令以训练对话任务。
+
+
 OpenRL训练结果
 ---------------
 
@@ -291,7 +304,7 @@ OpenRL          **13.20(+17%)**  **0.181(+10%)**  **0.153(+12%)**  **0.292(+25%)
 =============== ================ ================ ================ =============== ================ ================ =================
 
 和训练好的智能体进行对话
----------------
+------------------------
 
 对于训练好的智能体，用户可以方便地通过 ``agent.chat()`` 接口进行对话：
 
@@ -317,6 +330,11 @@ OpenRL          **13.20(+17%)**  **0.181(+10%)**  **0.153(+12%)**  **0.292(+25%)
             history.append(response)
     if __name__ == "__main__":
         chat()
+
+.. tip::
+
+    用户可以在 `chat.py <https://github.com/OpenRL-Lab/openrl/blob/main/examples/nlp/chat.py>`_ 里找到该部分的示例代码。
+
 
 执行 **python chat.py** ，便可以和训练好的智能体进行对话了：
 
