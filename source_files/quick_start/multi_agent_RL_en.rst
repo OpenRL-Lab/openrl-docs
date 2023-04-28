@@ -42,6 +42,9 @@ By default, asynchronous=False, which means that each environment will be execut
 
 In addition, to save the trained agents after training is completed, we use agent.save() function to save them in "./ppo_agent/" folder.
 
+.. tip::
+
+    Users can find example code for this section in  `openrl/example <https://github.com/OpenRL-Lab/openrl/tree/main/examples/mpe>`_ .
 
 Modify Training Parameters through Configuration Files
 ------------------------------------------------------
