@@ -1,12 +1,12 @@
 Train Natural Language Dialogue Task
-=====================
+======================================
 
 In this section, we will introduce how to import `Hugging Face <https://huggingface.co/>`_  **models** and **datasets** into OpenRL,
 as well as how to use a **custom reward model** and **customize the output** of wandb through a natural language dialogue task ( `DailyDialog <https://arxiv.org/abs/1710.03957>`_ ).
 
 
 Introduction to DailyDialog
---------------------
+-----------------------------
 
 `DailyDialog <https://arxiv.org/abs/1710.03957>`_ is a multi-turn dialogue dataset, which contains a total of 13,000 dialogues.
 
@@ -25,7 +25,7 @@ Next, we will provide a detailed introduction on how to use OpenRL to train natu
 
 
 Creat Environment and Load Dataset
-------------------
+------------------------------------
 
 Training for natural language tasks involves the use of some additional packages.
 Users can install these packages using the following command:
@@ -49,13 +49,13 @@ we first need to write a ``train_ppo.py`` file and include the following trainin
         cfg_parser = create_config_parser()
         cfg = cfg_parser.parse_args()
         # Create NLP environment.
-        env = make("daily_dialog",env_num=2,asynchronous=True,cfg=cfg,)
+        env = make("daily_dialog",env_num=2,asynchronous=True,cfg=cfg)
         # Create neural network.
         net = Net(env, cfg=cfg, device="cuda")
         # Create training agent.
         agent = Agent(net)
         # Begin training.
-        agent.train(total_time_steps=5000000)
+        agent.train(total_time_steps=100000)
         # Save the trained agent.
         agent.save("./ppo_agent/")
     if __name__ == "__main__":
@@ -66,9 +66,11 @@ Then, we can create a configuration file named ``nlp_ppo.yaml`` and add the foll
 .. code-block:: yaml
 
     # nlp_ppo.yaml
-    data_path: daily_dialog # dataset name or path
     env: # environment parameters
-        args: {"tokenizer_path": gpt2} # path to load tokenizer
+        args: {
+            "tokenizer_path": gpt2, # path to load tokenizer
+            "data_path": daily_dialog # dataset name or path
+        } 
     seed: 0 # set seed
     lr: 1e-6 # set learning rate of policy model
     critic_lr: 1e-6 # set learning rate of critic model
@@ -76,12 +78,12 @@ Then, we can create a configuration file named ``nlp_ppo.yaml`` and add the foll
     use_recurrent_policy: true
 
 From the above configuration file,
-it can be seen that training an NLP task requires additional settings for the dataset name ``data_path`` and environment parameter ``env.args``.
-``data_path`` can be set to either a Hugging Face dataset name or a local dataset path.
-In addition, the ``tokenizer_path`` in the environment parameters is used to specify the Hugging Face name or local path for loading text encoders.
+Training an NLP task requires additional settings for the environment parameter ``env.args``.
+The ``tokenizer_path`` in the environment parameters is used to specify the Hugging Face name or local path for loading text encoders.
+In addition, ``data_path`` in the environment parameters can be set to either a Hugging Face dataset name or a local dataset path.
 
 Train with Hugging Face's models.
---------------------------------
+-----------------------------------
 
 In OpenRL, we can use models from Hugging Face for training.
 To load a model from Hugging Face, we first need to add the following content in the configuration file ``nlp_ppo.yaml`` :
@@ -93,9 +95,11 @@ To load a model from Hugging Face, we first need to add the following content in
     use_share_model: true
     ppo_epoch: 5 # ppo iteration times
 
-    data_path: daily_dialog # dataset name or path
     env: # environment parameters
-        args: {'tokenizer_path': 'gpt2'} # path to load tokenizer
+        args: {
+            "tokenizer_path": gpt2, # path to load tokenizer
+            "data_path": daily_dialog # dataset name or path
+        } 
     lr: 1e-6 # set learning rate of policy model
     critic_lr: 1e-6 # set learning rate of critic model
     episode_length: 128 # set the length of each episode
@@ -118,14 +122,14 @@ Then you need to add the following code in ``train_ppo.py`` :
         cfg_parser = create_config_parser()
         cfg = cfg_parser.parse_args()
         # Create NLP environment.
-        env = make("daily_dialog",env_num=2,asynchronous=True,cfg=cfg,)
+        env = make("daily_dialog",env_num=2,asynchronous=True,cfg=cfg)
         # Create neural network.
         model_dict = {"model": PolicyValueNetwork}
         net = Net(env, cfg=cfg, model_dict=model_dict)
         # Create training agent.
         agent = Agent(net)
         # Begin training.
-        agent.train(total_time_steps=5000000)
+        agent.train(total_time_steps=100000)
         # Save the trained agent.
         agent.save("./ppo_agent/")
     if __name__ == "__main__":
@@ -158,7 +162,7 @@ By making the simple modifications outlined above, users can train using pre-tra
     The implementation method of custom models can refer to `PolicyValueNetworkGPT <https://github.com/OpenRL-Lab/openrl/blob/main/openrl/modules/networks/policy_value_network_gpt.py>`_、`PolicyNetwork <https://github.com/OpenRL-Lab/openrl/blob/main/openrl/modules/networks/policy_network.py>`_ and `ValueNetwork <https://github.com/OpenRL-Lab/openrl/blob/main/openrl/modules/networks/value_network.py>`_ 。
 
 Use Reward Model
-------------
+------------------
 
 Usually, the datasets for natural language tasks do not include reward information.
 Therefore, if reinforcement learning is used to train a natural language task, an additional reward model needs to be used to generate rewards.
@@ -188,9 +192,11 @@ To use this reward model in OpenRL, users do not need to modify training code bu
     model_path: rajkumarrrk/gpt2-fine-tuned-on-daily-dialog # pre-trained model name or path
     use_share_model: true
     ppo_epoch: 5 # ppo iteration times
-    data_path: daily_dialog # dataset name or path
     env: # environment parameters
-        args: {"tokenizer_path": gpt2} # tokenizer name or path
+        args: {
+            "tokenizer_path": gpt2, # path to load tokenizer
+            "data_path": daily_dialog # dataset name or path
+        } 
     lr: 1e-6 # set learning rate of policy model
     critic_lr: 1e-6 # set learning rate of critic model
     episode_length: 128 # set the length of each episode
@@ -218,7 +224,7 @@ To use this reward model in OpenRL, users do not need to modify training code bu
             args: {} # the parameters that may be used in the custom reward model
 
 Customize wandb Output
-----------------
+-----------------------
 
 OpenRL also supports user-defined output content for wandb or tensorboard.
 For example, during the training process of this task, we also need to output information on various types of rewards
@@ -272,7 +278,7 @@ Finally, just fill in the ``CustomVecInfo`` class in the ``nlp_ppo.yaml`` file:
         id: "CustomVecInfo" # Call the CustomVecInfo class to output custom information.
 
 Accelerate training with Automatic Mixed Precision
---------------------
+---------------------------------------------------
 
 OpenRL also provides a feature to enable automatic mixed-precision training in one step.
 Users only need to add the following parameters in the configuration file:
@@ -283,8 +289,16 @@ Users only need to add the following parameters in the configuration file:
     use_amp: true # Enable automatic mixed precision training.
 
 
+.. tip::
+
+    Users can find sample code for training nlp tasks in `train_ppo.py <https://github.com/OpenRL-Lab/openrl/blob/main/examples/nlp/train_ppo.py>`_ .
+    Find the parameters for training nlp tasks in `nlp_ppo.yaml <https://github.com/OpenRL-Lab/openrl/blob/main/examples/nlp/nlp_ppo.yaml>`_ .
+    Users can execute python train_ppo.py --config nlp_ppo.yaml to train the conversation task.
+
+
+
 Training results of OpenRL
----------------
+---------------------------
 
 The table below shows the results of training the dialogue task using OpenRL.
 The results indicate that after training with reinforcement learning, all model indicators have improved.
@@ -302,7 +316,7 @@ OpenRL              **13.20(+17%)**  **0.181(+10%)**  **0.153(+12%)**  **0.292(+
 
 
 Chat with Trained Agent
----------------
+------------------------
 
 For a trained agent, users can easily engage in conversation through the ``agent.chat()`` function:
 
@@ -330,6 +344,11 @@ For a trained agent, users can easily engage in conversation through the ``agent
         chat()
 
 Execute **python chat.py** to start a conversation with the trained agent:
+
+
+.. tip::
+
+    Users can find the sample code for this section in `chat.py <https://github.com/OpenRL-Lab/openrl/blob/main/examples/nlp/chat.py>`_
 
 .. image::
     images/chat.gif
