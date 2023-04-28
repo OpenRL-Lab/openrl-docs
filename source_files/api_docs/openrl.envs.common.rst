@@ -4,6 +4,14 @@ openrl.envs.common package
 Submodules
 ----------
 
+openrl.envs.common.build\_envs module
+-------------------------------------
+
+.. automodule:: openrl.envs.common.build_envs
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 openrl.envs.common.registration module
 --------------------------------------
 

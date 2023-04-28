@@ -1,5 +1,5 @@
-openrl.runners package
-======================
+openrl.supports.opendata package
+================================
 
 Subpackages
 -----------
@@ -7,12 +7,12 @@ Subpackages
 .. toctree::
    :maxdepth: 4
 
-   openrl.runners.common
+   openrl.supports.opendata.utils
 
 Module contents
 ---------------
 
-.. automodule:: openrl.runners
+.. automodule:: openrl.supports.opendata
    :members:
    :undoc-members:
    :show-inheritance:
