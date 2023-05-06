@@ -8,7 +8,7 @@
 -------
 
 OpenRL为用户提供了一个简单易用的使用方式，这里我们以 `CartPole <https://gymnasium.farama.org/environments/classic_control/cart_pole/>`_ 环境为例，
-展示如何使用 OpenRL 进行强化学习训练。新建一个文件 train_ppo.py，输入如下代码.
+展示如何使用 OpenRL 进行强化学习训练。新建一个文件 ``train_ppo.py``，输入如下代码.
 
 .. code-block:: python
 
@@ -35,8 +35,8 @@ OpenRL为用户提供了一个简单易用的使用方式，这里我们以 `Car
 测试环境
 -------
 
-当智能体完成训练后，我们可以通过agent.act()方法，可以获取智能体的动作。
-只需要在train_ppo.py文件中，添加如下代码，即可完成智能体的可视化测试：
+当智能体完成训练后，我们可以通过 ``agent.act()`` 方法，可以获取智能体的动作。
+只需要在 ``train_ppo.py`` 文件中，添加如下代码，即可完成智能体的可视化测试：
 
 .. code-block:: python
 

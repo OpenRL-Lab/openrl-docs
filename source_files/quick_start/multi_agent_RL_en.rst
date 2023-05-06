@@ -12,7 +12,7 @@ On the left are the trained agents using OpenRL framework; on the right are rand
     :width: 1000
     :align: center
 
-Similar to training `CartPole <./hello_world.html>`_, we can create a train_ppo.py file and write our training code:
+Similar to training `CartPole <./hello_world.html>`_, we can create a ``train_ppo.py`` file and write our training code:
 
 .. code-block:: python
 
@@ -37,10 +37,10 @@ Similar to training `CartPole <./hello_world.html>`_, we can create a train_ppo.
     if __name__ == "__main__":
          train()
 
-Compared with `CartPole <./hello_world.html>`_ environment, we use asynchronous=True when creating MPE environment so that each agent can run independently and improve the efficiency of data sampling.
-By default, asynchronous=False, which means that each environment will be executed in order.
+Compared with `CartPole <./hello_world.html>`_ environment, we use ``asynchronous=True`` when creating MPE environment so that each agent can run independently and improve the efficiency of data sampling.
+By default, ``asynchronous=False``, which means that each environment will be executed in order.
 
-In addition, to save the trained agents after training is completed, we use agent.save() function to save them in "./ppo_agent/" folder.
+In addition, to save the trained agents after training is completed, we use ``agent.save()`` function to save them in "./ppo_agent/" folder.
 
 .. tip::
 
@@ -50,7 +50,7 @@ Modify Training Parameters through Configuration Files
 ------------------------------------------------------
 
 This training script still uses default parameters. We can easily modify hyperparameters by writing a configuration file.
-Firstly, we modify train_ppo.py file and add code for reading configuration files. Then pass the read configuration to neural network Net():
+Firstly, we modify train_ppo.py file and add code for reading configuration files. Then pass the read configuration to neural network ``Net()``:
 
 .. code-block:: python
 
@@ -79,7 +79,7 @@ Firstly, we modify train_ppo.py file and add code for reading configuration file
     if __name__ == "__main__":
          train()
 
-Then we create a mpe_ppo.yaml file in the same directory as train_ppo.py to store hyperparameter configurations:
+Then we create a ``mpe_ppo.yaml`` file in the same directory as train_ppo.py to store hyperparameter configurations:
 
 .. code-block:: yaml
 
@@ -129,7 +129,7 @@ Just add the following content to the configuration file:
     use_valuenorm: true # Whether value normalization should be used.
     use_adv_normalize: true # Whether advantage normalization should be used.
 
-After writing the configuration file, we only need to set Agent(net, use_wandb=True) in train_ppo.py:
+After writing the configuration file, we only need to set ``Agent(net, use_wandb=True)`` in ``train_ppo.py``:
 
 .. code-block:: python
 
@@ -170,8 +170,8 @@ After a while, users can see the following training process on the wandb website
 Loading Trained Agent
 -------
 
-After the intelligent agent is trained and saved, we can load the trained agent using `agent.load()` and test it.
-Let's create a new file named `test_ppo.py` for testing the trained agent:
+After the intelligent agent is trained and saved, we can load the trained agent using ``agent.load()`` and test it.
+Let's create a new file named ``eval_ppo.py`` for testing the trained agent:
 
 .. code-block:: python
 
@@ -180,7 +180,7 @@ Let's create a new file named `test_ppo.py` for testing the trained agent:
     from openrl.modules.common import PPONet as Net
     from openrl.runners.common import PPOAgent as Agent
     from openrl.envs.wrappers import GIFWrapper # used to generate gif
-    def test():
+    def evaluation():
         # Create MPE environment.
         env = make("simple_spread", env_num=4)
         # Use GIFWrapper to generate gifs.
@@ -197,10 +197,10 @@ Let's create a new file named `test_ppo.py` for testing the trained agent:
                 break
         env.close()
     if __name__ == "__main__":
-        test()
+        evaluation()
 
-Then execute **python test_ppo.py** in the terminal to start testing. After testing is completed,
-we can find the `test_simple_spread.gif` file in the current directory for observing how well our intelligent agents perform:
+Then execute **python eval_ppo.py** in the terminal to start testing. After testing is completed,
+we can find the ``test_simple_spread.gif`` file in the current directory for observing how well our intelligent agents perform:
 
 .. image::
    images/test_simple_spread.gif

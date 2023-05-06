@@ -334,6 +334,7 @@ OpenRL          **13.20(+17%)**  **0.181(+10%)**  **0.153(+12%)**  **0.292(+25%)
 .. tip::
 
     用户可以在 `chat.py <https://github.com/OpenRL-Lab/openrl/blob/main/examples/nlp/chat.py>`_ 里找到该部分的示例代码。
+    此外，我们还在 `chat_6b.py <https://github.com/OpenRL-Lab/openrl/blob/main/examples/nlp/chat_6b.py>`_ 提供了一个和 `ChatGLM-6B <https://github.com/THUDM/ChatGLM-6B>`_ 模型聊天的示例。
 
 
 执行 **python chat.py** ，便可以和训练好的智能体进行对话了：
