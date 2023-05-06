@@ -12,7 +12,7 @@
     :width: 1000
     :align: center
 
-和训练 `CartPole <./hello_world.html>`_ 环境一样，我们可以创建一个train_ppo.py文件，然后在其中编写训练代码：
+和训练 `CartPole <./hello_world.html>`_ 环境一样，我们可以创建一个 ``train_ppo.py`` 文件，然后在其中编写训练代码：
 
 .. code-block:: python
 
@@ -39,10 +39,10 @@
         train()
 
 相比于 `CartPole <./hello_world.html>`_ 环境，我们在创建MPE环境时，
-使用了asynchronous=True，这样每个环境能够独立运行，从而提升环境的数据采样效率。
-默认情况下，asynchronous=False，这时每个环境将会按照顺序依次执行。
+使用了 ``asynchronous=True``，这样每个环境能够独立运行，从而提升环境的数据采样效率。
+默认情况下， ``asynchronous=False``，这时每个环境将会按照顺序依次执行。
 
-此外，为了保存训练完成后的智能体，我们使用了agent.save()函数，将智能体保存在"./ppo_agent/"文件夹中。
+此外，为了保存训练完成后的智能体，我们使用了 ``agent.save()`` 函数，将智能体保存在 "./ppo_agent/" 文件夹中。
 
 .. tip::
 
@@ -52,7 +52,7 @@
 ------
 
 这个训练脚本依然使用的是默认参数，我们还可以方便地通过编写配置文件来修改训练超参数。
-首先，我们修改train_ppo.py文件，在其中添加读取配置文件的代码，并把读取的配置传给神经网络Net()：
+首先，我们修改 ``train_ppo.py`` 文件，在其中添加读取配置文件的代码，并把读取的配置传给神经网络 ``Net()`` ：
 
 .. code-block:: python
 
@@ -83,7 +83,7 @@
     if __name__ == "__main__":
         train()
 
-然后，我们在与train_ppo.py的同一目录下创建一个mpe_ppo.yaml文件，用于存放训练超参数的配置：
+然后，我们在与 ``train_ppo.py`` 的同一目录下创建一个 ``mpe_ppo.yaml`` 文件，用于存放训练超参数的配置：
 
 .. code-block:: yaml
 
@@ -110,7 +110,7 @@
 
 .. note::
 
-    训练该MPE任务大约耗时30分钟，训练完成后，可在与train_ppo.py的同一目录下找到ppo_agent文件夹，其中包含了训练完成的智能体。
+    训练该MPE任务大约耗时30分钟，训练完成后，可在与 ``train_ppo.py`` 的同一目录下找到 ``ppo_agent`` 文件夹，其中包含了训练完成的智能体。
     接下来，我们将继续介绍如何在OpenRL框架中使用wandb来可视化训练过程，用户可在完成wandb使用教程后再开始实际的训练。
 
 使用wandb跟踪训练过程
@@ -138,7 +138,7 @@
     use_valuenorm: true # 设置是否使用value normalization
     use_adv_normalize: true # 设置是否使用advantage normalization
 
-写好配置文件后，我们只需要在train_ppo.py文件中设置Agent(net, use_wandb=True)即可：
+写好配置文件后，我们只需要在 ``train_ppo.py`` 文件中设置 ``Agent(net, use_wandb=True)`` 即可：
 
 .. code-block:: python
 
@@ -182,17 +182,17 @@
 加载训练好的智能体
 -------
 
-智能体训练完成并保存后，我们可以通过agent.load()来加载训练好的智能体，并进行测试。让我们新建一个名为test_ppo.py的文件，用于测试训练好的智能体：
+智能体训练完成并保存后，我们可以通过 ``agent.load()`` 来加载训练好的智能体，并进行测试。让我们新建一个名为 ``eval_ppo.py`` 的文件，用于测试训练好的智能体：
 
 .. code-block:: python
 
-    # test_ppo.py
+    # eval_ppo.py
     from openrl.envs.common import make
     from openrl.modules.common import PPONet as Net
     from openrl.runners.common import PPOAgent as Agent
     from openrl.envs.wrappers import GIFWrapper # 用于生成gif
 
-    def test():
+    def evaluation():
         # 创建 MPE 环境
         env = make( "simple_spread", env_num=4)
         # 使用GIFWrapper，用于生成gif
@@ -211,10 +211,10 @@
         env.close()
 
     if __name__ == "__main__":
-        test()
+        evaluation()
 
-然后，我们在终端中执行 **python test_ppo.py** ，即可开始测试。测试完成后，
-我们可以在当前目录下找到test_simple_spread.gif文件，用于观察智能体的表现：
+然后，我们在终端中执行 **python eval_ppo.py** ，即可开始测试。测试完成后，
+我们可以在当前目录下找到 ``test_simple_spread.gif`` 文件，用于观察智能体的表现：
 
 .. image::
     images/test_simple_spread.gif

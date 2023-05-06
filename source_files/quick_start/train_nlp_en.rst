@@ -348,7 +348,8 @@ Execute **python chat.py** to start a conversation with the trained agent:
 
 .. tip::
 
-    Users can find the sample code for this section in `chat.py <https://github.com/OpenRL-Lab/openrl/blob/main/examples/nlp/chat.py>`_
+    Users can find the sample code for this section in `chat.py <https://github.com/OpenRL-Lab/openrl/blob/main/examples/nlp/chat.py>`_ .
+    In addition, we also provide an example of chatting with the `ChatGLM-6B <https://github.com/THUDM/ChatGLM-6B>`_ model in `chat_6b.py <https://github.com/OpenRL-Lab/openrl/blob/main/examples/nlp/chat_6b.py>`_.
 
 .. image::
     images/chat.gif

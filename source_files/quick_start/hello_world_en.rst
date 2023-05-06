@@ -37,7 +37,7 @@ Execute python train_ppo.py in the terminal to start training. On an ordinary la
 Test Environment
 -------
 
-After the agents have completed their training, we can use the agent.act() method to obtain actions.
+After the agents have completed their training, we can use the ``agent.act()`` method to obtain actions.
 Just add this code snippet into your ``train_ppo.py`` file and visualize test results:
 
 .. code-block:: python
@@ -75,7 +75,7 @@ Demonstration:
 .. note::
 
    If you run test code on a server machine you can not use a visualization interface. You can set the render_mode as "group_rgb_array",
-   then call env.render() after each step to get the environment image.
+   then call ``env.render()`` after each step to get the environment image.
 
 In the following sections, we will use a more complex multi-agent reinforcement learning task (`MPE <./multi_agent_RL.html>`_) as an example,
 to introduce how to set training hyperparameters, how to switch between parallelism mode and serial mode, and how to use wandb.
