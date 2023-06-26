@@ -14,4 +14,5 @@
 
    intro/index
    quick_start/index
+   callbacks/index
    api_docs/openrl
