@@ -100,6 +100,14 @@ openrl.modules.networks.utils.util module
    :undoc-members:
    :show-inheritance:
 
+openrl.modules.networks.utils.vdn module
+----------------------------------------
+
+.. automodule:: openrl.modules.networks.utils.vdn
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 Module contents
 ---------------
 

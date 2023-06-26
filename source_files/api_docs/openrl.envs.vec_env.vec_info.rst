@@ -12,6 +12,14 @@ openrl.envs.vec\_env.vec\_info.base\_vec\_info module
    :undoc-members:
    :show-inheritance:
 
+openrl.envs.vec\_env.vec\_info.episode\_rewards\_info module
+------------------------------------------------------------
+
+.. automodule:: openrl.envs.vec_env.vec_info.episode_rewards_info
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 openrl.envs.vec\_env.vec\_info.nlp\_vec\_info module
 ----------------------------------------------------
 

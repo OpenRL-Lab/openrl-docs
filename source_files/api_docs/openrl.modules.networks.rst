@@ -12,6 +12,14 @@ Subpackages
 Submodules
 ----------
 
+openrl.modules.networks.MAT\_network module
+-------------------------------------------
+
+.. automodule:: openrl.modules.networks.MAT_network
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 openrl.modules.networks.base\_policy\_network module
 ----------------------------------------------------
 
@@ -24,6 +32,14 @@ openrl.modules.networks.base\_value\_network module
 ---------------------------------------------------
 
 .. automodule:: openrl.modules.networks.base_value_network
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+openrl.modules.networks.base\_value\_policy\_network module
+-----------------------------------------------------------
+
+.. automodule:: openrl.modules.networks.base_value_policy_network
    :members:
    :undoc-members:
    :show-inheritance:
@@ -52,10 +68,26 @@ openrl.modules.networks.policy\_value\_network\_gpt module
    :undoc-members:
    :show-inheritance:
 
+openrl.modules.networks.q\_network module
+-----------------------------------------
+
+.. automodule:: openrl.modules.networks.q_network
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 openrl.modules.networks.value\_network module
 ---------------------------------------------
 
 .. automodule:: openrl.modules.networks.value_network
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+openrl.modules.networks.vdn\_network module
+-------------------------------------------
+
+.. automodule:: openrl.modules.networks.vdn_network
    :members:
    :undoc-members:
    :show-inheritance:

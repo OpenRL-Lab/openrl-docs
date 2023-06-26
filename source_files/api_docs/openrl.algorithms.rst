@@ -12,10 +12,34 @@ openrl.algorithms.base\_algorithm module
    :undoc-members:
    :show-inheritance:
 
+openrl.algorithms.dqn module
+----------------------------
+
+.. automodule:: openrl.algorithms.dqn
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+openrl.algorithms.mat module
+----------------------------
+
+.. automodule:: openrl.algorithms.mat
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 openrl.algorithms.ppo module
 ----------------------------
 
 .. automodule:: openrl.algorithms.ppo
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+openrl.algorithms.vdn module
+----------------------------
+
+.. automodule:: openrl.algorithms.vdn
    :members:
    :undoc-members:
    :show-inheritance:

@@ -16,6 +16,7 @@ Subpackages
    openrl.modules
    openrl.rewards
    openrl.runners
+   openrl.selfplay
    openrl.supports
    openrl.utils
 

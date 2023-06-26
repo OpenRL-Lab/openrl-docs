@@ -20,10 +20,42 @@ openrl.runners.common.chat\_agent module
    :undoc-members:
    :show-inheritance:
 
+openrl.runners.common.dqn\_agent module
+---------------------------------------
+
+.. automodule:: openrl.runners.common.dqn_agent
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+openrl.runners.common.mat\_agent module
+---------------------------------------
+
+.. automodule:: openrl.runners.common.mat_agent
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 openrl.runners.common.ppo\_agent module
 ---------------------------------------
 
 .. automodule:: openrl.runners.common.ppo_agent
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+openrl.runners.common.rl\_agent module
+--------------------------------------
+
+.. automodule:: openrl.runners.common.rl_agent
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+openrl.runners.common.vdn\_agent module
+---------------------------------------
+
+.. automodule:: openrl.runners.common.vdn_agent
    :members:
    :undoc-members:
    :show-inheritance:
