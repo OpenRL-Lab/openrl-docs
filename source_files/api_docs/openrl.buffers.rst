@@ -20,6 +20,22 @@ openrl.buffers.normal\_buffer module
    :undoc-members:
    :show-inheritance:
 
+openrl.buffers.offpolicy\_buffer module
+---------------------------------------
+
+.. automodule:: openrl.buffers.offpolicy_buffer
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+openrl.buffers.offpolicy\_replay\_data module
+---------------------------------------------
+
+.. automodule:: openrl.buffers.offpolicy_replay_data
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 openrl.buffers.replay\_data module
 ----------------------------------
 

@@ -22,6 +22,14 @@ openrl.modules.base\_module module
    :undoc-members:
    :show-inheritance:
 
+openrl.modules.dqn\_module module
+---------------------------------
+
+.. automodule:: openrl.modules.dqn_module
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 openrl.modules.model\_config module
 -----------------------------------
 
@@ -42,6 +50,14 @@ openrl.modules.rl\_module module
 --------------------------------
 
 .. automodule:: openrl.modules.rl_module
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+openrl.modules.vdn\_module module
+---------------------------------
+
+.. automodule:: openrl.modules.vdn_module
    :members:
    :undoc-members:
    :show-inheritance:

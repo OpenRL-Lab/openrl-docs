@@ -12,6 +12,14 @@ openrl.drivers.base\_driver module
    :undoc-members:
    :show-inheritance:
 
+openrl.drivers.offpolicy\_driver module
+---------------------------------------
+
+.. automodule:: openrl.drivers.offpolicy_driver
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 openrl.drivers.onpolicy\_driver module
 --------------------------------------
 
