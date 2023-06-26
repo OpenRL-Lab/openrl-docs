@@ -34,6 +34,7 @@ Currently, OpenRL framework has the following features:
 In the following section on `Quick Start <../quick_start/index.html>`_ , we will introduce how to install the OpenRL framework,
 and demonstrate how to use OpenRL through simple examples.
 
+Users can also check the algorithms and environments supported by OpenRL, as well as obtain corresponding code in the `Gallery <https://github.com/OpenRL-Lab/openrl/blob/main/Gallery.md>`_.
 
 Citing OpenRL
 ------------------------
