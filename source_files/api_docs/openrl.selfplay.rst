@@ -1,21 +1,22 @@
 openrl.selfplay package
 =======================
 
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   openrl.selfplay.strategies
+   openrl.selfplay.wrappers
+
 Submodules
 ----------
 
-openrl.selfplay.base\_strategy module
--------------------------------------
+openrl.selfplay.multiplayer\_env module
+---------------------------------------
 
-.. automodule:: openrl.selfplay.base_strategy
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-openrl.selfplay.strategies module
----------------------------------
-
-.. automodule:: openrl.selfplay.strategies
+.. automodule:: openrl.selfplay.multiplayer_env
    :members:
    :undoc-members:
    :show-inheritance:

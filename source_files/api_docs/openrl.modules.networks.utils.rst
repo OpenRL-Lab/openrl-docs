@@ -84,6 +84,14 @@ openrl.modules.networks.utils.rnn module
    :undoc-members:
    :show-inheritance:
 
+openrl.modules.networks.utils.running\_mean\_std module
+-------------------------------------------------------
+
+.. automodule:: openrl.modules.networks.utils.running_mean_std
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 openrl.modules.networks.utils.transformer\_act module
 -----------------------------------------------------
 

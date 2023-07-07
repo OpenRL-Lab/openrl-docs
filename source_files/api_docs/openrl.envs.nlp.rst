@@ -20,6 +20,14 @@ openrl.envs.nlp.daily\_dialog\_env module
    :undoc-members:
    :show-inheritance:
 
+openrl.envs.nlp.fake\_dialog\_env module
+----------------------------------------
+
+.. automodule:: openrl.envs.nlp.fake_dialog_env
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 openrl.envs.nlp.nlp\_env module
 -------------------------------
 

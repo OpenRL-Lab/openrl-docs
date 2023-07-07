@@ -22,10 +22,34 @@ openrl.modules.base\_module module
    :undoc-members:
    :show-inheritance:
 
+openrl.modules.bc\_module module
+--------------------------------
+
+.. automodule:: openrl.modules.bc_module
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+openrl.modules.ddpg\_module module
+----------------------------------
+
+.. automodule:: openrl.modules.ddpg_module
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 openrl.modules.dqn\_module module
 ---------------------------------
 
 .. automodule:: openrl.modules.dqn_module
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+openrl.modules.gail\_module module
+----------------------------------
+
+.. automodule:: openrl.modules.gail_module
    :members:
    :undoc-members:
    :show-inheritance:
@@ -50,6 +74,14 @@ openrl.modules.rl\_module module
 --------------------------------
 
 .. automodule:: openrl.modules.rl_module
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+openrl.modules.sac\_module module
+---------------------------------
+
+.. automodule:: openrl.modules.sac_module
    :members:
    :undoc-members:
    :show-inheritance:

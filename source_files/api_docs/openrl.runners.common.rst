@@ -12,6 +12,14 @@ openrl.runners.common.base\_agent module
    :undoc-members:
    :show-inheritance:
 
+openrl.runners.common.bc\_agent module
+--------------------------------------
+
+.. automodule:: openrl.runners.common.bc_agent
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 openrl.runners.common.chat\_agent module
 ----------------------------------------
 
@@ -20,10 +28,26 @@ openrl.runners.common.chat\_agent module
    :undoc-members:
    :show-inheritance:
 
+openrl.runners.common.ddpg\_agent module
+----------------------------------------
+
+.. automodule:: openrl.runners.common.ddpg_agent
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 openrl.runners.common.dqn\_agent module
 ---------------------------------------
 
 .. automodule:: openrl.runners.common.dqn_agent
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+openrl.runners.common.gail\_agent module
+----------------------------------------
+
+.. automodule:: openrl.runners.common.gail_agent
    :members:
    :undoc-members:
    :show-inheritance:
@@ -48,6 +72,14 @@ openrl.runners.common.rl\_agent module
 --------------------------------------
 
 .. automodule:: openrl.runners.common.rl_agent
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+openrl.runners.common.sac\_agent module
+---------------------------------------
+
+.. automodule:: openrl.runners.common.sac_agent
    :members:
    :undoc-members:
    :show-inheritance:

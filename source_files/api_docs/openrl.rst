@@ -11,6 +11,7 @@ Subpackages
    openrl.buffers
    openrl.cli
    openrl.configs
+   openrl.datasets
    openrl.drivers
    openrl.envs
    openrl.modules
