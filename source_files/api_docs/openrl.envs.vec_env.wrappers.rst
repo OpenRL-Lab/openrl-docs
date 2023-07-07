@@ -12,6 +12,14 @@ openrl.envs.vec\_env.wrappers.base\_wrapper module
    :undoc-members:
    :show-inheritance:
 
+openrl.envs.vec\_env.wrappers.gen\_data module
+----------------------------------------------
+
+.. automodule:: openrl.envs.vec_env.wrappers.gen_data
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 openrl.envs.vec\_env.wrappers.reward\_wrapper module
 ----------------------------------------------------
 
@@ -24,6 +32,14 @@ openrl.envs.vec\_env.wrappers.vec\_monitor\_wrapper module
 ----------------------------------------------------------
 
 .. automodule:: openrl.envs.vec_env.wrappers.vec_monitor_wrapper
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+openrl.envs.vec\_env.wrappers.zero\_reward\_wrapper module
+----------------------------------------------------------
+
+.. automodule:: openrl.envs.vec_env.wrappers.zero_reward_wrapper
    :members:
    :undoc-members:
    :show-inheritance:

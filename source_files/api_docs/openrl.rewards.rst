@@ -12,6 +12,14 @@ openrl.rewards.base\_reward module
    :undoc-members:
    :show-inheritance:
 
+openrl.rewards.gail\_reward module
+----------------------------------
+
+.. automodule:: openrl.rewards.gail_reward
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 openrl.rewards.nlp\_reward module
 ---------------------------------
 
