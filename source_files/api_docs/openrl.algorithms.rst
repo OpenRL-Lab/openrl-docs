@@ -12,10 +12,34 @@ openrl.algorithms.base\_algorithm module
    :undoc-members:
    :show-inheritance:
 
+openrl.algorithms.behavior\_cloning module
+------------------------------------------
+
+.. automodule:: openrl.algorithms.behavior_cloning
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+openrl.algorithms.ddpg module
+-----------------------------
+
+.. automodule:: openrl.algorithms.ddpg
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 openrl.algorithms.dqn module
 ----------------------------
 
 .. automodule:: openrl.algorithms.dqn
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+openrl.algorithms.gail module
+-----------------------------
+
+.. automodule:: openrl.algorithms.gail
    :members:
    :undoc-members:
    :show-inheritance:

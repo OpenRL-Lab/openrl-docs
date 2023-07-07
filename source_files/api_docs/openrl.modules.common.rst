@@ -12,10 +12,34 @@ openrl.modules.common.base\_net module
    :undoc-members:
    :show-inheritance:
 
+openrl.modules.common.bc\_net module
+------------------------------------
+
+.. automodule:: openrl.modules.common.bc_net
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+openrl.modules.common.ddpg\_net module
+--------------------------------------
+
+.. automodule:: openrl.modules.common.ddpg_net
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 openrl.modules.common.dqn\_net module
 -------------------------------------
 
 .. automodule:: openrl.modules.common.dqn_net
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+openrl.modules.common.gail\_net module
+--------------------------------------
+
+.. automodule:: openrl.modules.common.gail_net
    :members:
    :undoc-members:
    :show-inheritance:

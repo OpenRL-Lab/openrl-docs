@@ -13,6 +13,7 @@ Subpackages
    openrl.envs.gymnasium
    openrl.envs.mpe
    openrl.envs.nlp
+   openrl.envs.offline
    openrl.envs.super_mario
    openrl.envs.toy_envs
    openrl.envs.vec_env

@@ -44,6 +44,22 @@ openrl.modules.networks.base\_value\_policy\_network module
    :undoc-members:
    :show-inheritance:
 
+openrl.modules.networks.ddpg\_network module
+--------------------------------------------
+
+.. automodule:: openrl.modules.networks.ddpg_network
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+openrl.modules.networks.gail\_discriminator module
+--------------------------------------------------
+
+.. automodule:: openrl.modules.networks.gail_discriminator
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 openrl.modules.networks.policy\_network module
 ----------------------------------------------
 
