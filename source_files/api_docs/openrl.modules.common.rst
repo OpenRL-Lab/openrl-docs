@@ -60,6 +60,14 @@ openrl.modules.common.ppo\_net module
    :undoc-members:
    :show-inheritance:
 
+openrl.modules.common.sac\_net module
+-------------------------------------
+
+.. automodule:: openrl.modules.common.sac_net
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 openrl.modules.common.vdn\_net module
 -------------------------------------
 

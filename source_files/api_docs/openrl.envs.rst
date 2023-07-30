@@ -7,8 +7,9 @@ Subpackages
 .. toctree::
    :maxdepth: 4
 
+   openrl.envs.PettingZoo
    openrl.envs.common
-   openrl.envs.connect3
+   openrl.envs.connect_env
    openrl.envs.gridworld
    openrl.envs.gymnasium
    openrl.envs.mpe

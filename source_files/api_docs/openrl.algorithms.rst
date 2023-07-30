@@ -60,6 +60,14 @@ openrl.algorithms.ppo module
    :undoc-members:
    :show-inheritance:
 
+openrl.algorithms.sac module
+----------------------------
+
+.. automodule:: openrl.algorithms.sac
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 openrl.algorithms.vdn module
 ----------------------------
 

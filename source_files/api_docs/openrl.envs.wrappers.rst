@@ -28,6 +28,14 @@ openrl.envs.wrappers.extra\_wrappers module
    :undoc-members:
    :show-inheritance:
 
+openrl.envs.wrappers.flatten module
+-----------------------------------
+
+.. automodule:: openrl.envs.wrappers.flatten
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 openrl.envs.wrappers.image\_wrappers module
 -------------------------------------------
 

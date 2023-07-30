@@ -76,6 +76,14 @@ openrl.runners.common.rl\_agent module
    :undoc-members:
    :show-inheritance:
 
+openrl.runners.common.sac\_agent module
+---------------------------------------
+
+.. automodule:: openrl.runners.common.sac_agent
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 openrl.runners.common.vdn\_agent module
 ---------------------------------------
 

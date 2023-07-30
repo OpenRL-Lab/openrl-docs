@@ -78,6 +78,14 @@ openrl.modules.rl\_module module
    :undoc-members:
    :show-inheritance:
 
+openrl.modules.sac\_module module
+---------------------------------
+
+.. automodule:: openrl.modules.sac_module
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 openrl.modules.vdn\_module module
 ---------------------------------
 

@@ -92,6 +92,14 @@ openrl.modules.networks.q\_network module
    :undoc-members:
    :show-inheritance:
 
+openrl.modules.networks.sac\_network module
+-------------------------------------------
+
+.. automodule:: openrl.modules.networks.sac_network
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 openrl.modules.networks.value\_network module
 ---------------------------------------------
 
