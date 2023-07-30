@@ -6,18 +6,18 @@
 [中文文档](https://openrl-docs.readthedocs.io/zh/latest/index.html) | 
 [English Docs](https://openrl-docs.readthedocs.io/en/latest/index.html) 
 
-## 本地构建
-
-中文文档：
-```bash
-./build_zh.sh
-```
+## Local Build
 
 English document：
 ```bash
 ./build_en.sh
 ```
 
+中文文档：
+```bash
+./build_zh.sh
+```
+
 # Contact Us
 
-文档有问题，请联系我们：`huangshiyu@4paradigm.com`
+Any question, please contact us: `huangshiyu@4paradigm.com`
