@@ -12,6 +12,14 @@ openrl.configs.config module
    :undoc-members:
    :show-inheritance:
 
+openrl.configs.utils module
+---------------------------
+
+.. automodule:: openrl.configs.utils
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 Module contents
 ---------------
 

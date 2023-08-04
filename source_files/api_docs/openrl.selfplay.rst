@@ -7,6 +7,10 @@ Subpackages
 .. toctree::
    :maxdepth: 4
 
+   openrl.selfplay.callbacks
+   openrl.selfplay.opponents
+   openrl.selfplay.sample_strategy
+   openrl.selfplay.selfplay_api
    openrl.selfplay.strategies
    openrl.selfplay.wrappers
 

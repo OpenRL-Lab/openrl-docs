@@ -18,7 +18,7 @@ import sys
 from shutil import copyfile
 from pathlib import Path
 
-release = "0.0.15"
+release = "0.1.0"
 
 sys.path.insert(0, os.path.abspath("../../"))
 print(sys.path)

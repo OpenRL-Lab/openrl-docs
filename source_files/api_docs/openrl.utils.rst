@@ -20,6 +20,14 @@ openrl.utils.evaluation module
    :undoc-members:
    :show-inheritance:
 
+openrl.utils.file\_tool module
+------------------------------
+
+.. automodule:: openrl.utils.file_tool
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 openrl.utils.logger module
 --------------------------
 
