@@ -20,18 +20,18 @@ openrl.selfplay.wrappers.human\_opponent\_wrapper module
    :undoc-members:
    :show-inheritance:
 
-openrl.selfplay.wrappers.random\_opponent\_wrapper module
----------------------------------------------------------
+openrl.selfplay.wrappers.opponent\_pool\_wrapper module
+-------------------------------------------------------
 
-.. automodule:: openrl.selfplay.wrappers.random_opponent_wrapper
+.. automodule:: openrl.selfplay.wrappers.opponent_pool_wrapper
    :members:
    :undoc-members:
    :show-inheritance:
 
-openrl.selfplay.wrappers.twoplayer\_wrapper module
---------------------------------------------------
+openrl.selfplay.wrappers.random\_opponent\_wrapper module
+---------------------------------------------------------
 
-.. automodule:: openrl.selfplay.wrappers.twoplayer_wrapper
+.. automodule:: openrl.selfplay.wrappers.random_opponent_wrapper
    :members:
    :undoc-members:
    :show-inheritance:

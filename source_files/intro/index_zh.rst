@@ -10,6 +10,7 @@ OpenRL 是由第四范式强化学习团队开发的基于PyTorch的强化学习
 #. 简单易用的训练接口，降低研究人员的学习和使用成本。
 #. 同时支持 **单智能体** 和 **多智能体** 算法。
 #. 支持 **离线强化学习** （Offline RL）算法。
+#. 支持 **自博弈** （Self-Play）训练。
 #. 支持 **自然语言任务** （如对话任务）的强化学习训练。
 #. 支持 `Hugging Face <https://huggingface.co/models>`_ 上的模型导入。
 #. 支持LSTM，GRU，Transformer等模型。
