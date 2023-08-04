@@ -160,5 +160,6 @@ source/intro/
 source/quick_start/
 source/index.rst
 source/callbacks
+source/selfplay
 # End of https://www.toptal.com/developers/gitignore/api/python,jupyternotebooks
 .vscode
