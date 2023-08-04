@@ -50,7 +50,7 @@ OpenRL通过对Callback的设计以及对于自博弈训练中各个部分的抽
         agent.train(total_time_steps=20000)
         env.close()
 
-在该示例中，我们使用了`PettingZoo <https://pettingzoo.farama.org/index.html>`_ 中的 `tictactoe_v3 <https://pettingzoo.farama.org/environments/classic/tictactoe/>`_ 环境作为我们的训练环境。
+在该示例中，我们使用了 `PettingZoo <https://pettingzoo.farama.org/index.html>`_ 中的 `tictactoe_v3 <https://pettingzoo.farama.org/environments/classic/tictactoe/>`_ 环境作为我们的训练环境。
 
 为了进行自博弈训练，我们使用了 ``OpponentPoolWrapper`` 来对环境进行包装，这个包装器会在环境每次reset时根据对手选择策略选择一个对手进行对战。
 而对于对手选择策略，我们需要通过YAML文件来进行配置。在实例中，我们使用了 ``selfplay.yaml`` 这个配置文件，以下是这个配置文件的内容：
