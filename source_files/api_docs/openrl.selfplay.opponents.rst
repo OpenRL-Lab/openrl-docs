@@ -36,6 +36,14 @@ openrl.selfplay.opponents.opponent\_template module
    :undoc-members:
    :show-inheritance:
 
+openrl.selfplay.opponents.random\_opponent module
+-------------------------------------------------
+
+.. automodule:: openrl.selfplay.opponents.random_opponent
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 openrl.selfplay.opponents.utils module
 --------------------------------------
 

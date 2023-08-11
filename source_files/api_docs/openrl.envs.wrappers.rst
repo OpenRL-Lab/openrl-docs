@@ -68,6 +68,14 @@ openrl.envs.wrappers.multiagent\_wrapper module
    :undoc-members:
    :show-inheritance:
 
+openrl.envs.wrappers.pettingzoo\_wrappers module
+------------------------------------------------
+
+.. automodule:: openrl.envs.wrappers.pettingzoo_wrappers
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 openrl.envs.wrappers.util module
 --------------------------------
 
