@@ -12,6 +12,14 @@ Subpackages
 Submodules
 ----------
 
+openrl.utils.custom\_data\_structure module
+-------------------------------------------
+
+.. automodule:: openrl.utils.custom_data_structure
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 openrl.utils.evaluation module
 ------------------------------
 

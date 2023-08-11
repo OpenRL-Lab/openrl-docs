@@ -12,6 +12,14 @@ openrl.selfplay.selfplay\_api.base\_api module
    :undoc-members:
    :show-inheritance:
 
+openrl.selfplay.selfplay\_api.opponent\_model module
+----------------------------------------------------
+
+.. automodule:: openrl.selfplay.selfplay_api.opponent_model
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 openrl.selfplay.selfplay\_api.selfplay\_api module
 --------------------------------------------------
 

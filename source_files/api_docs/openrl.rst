@@ -8,6 +8,7 @@ Subpackages
    :maxdepth: 4
 
    openrl.algorithms
+   openrl.arena
    openrl.buffers
    openrl.cli
    openrl.configs

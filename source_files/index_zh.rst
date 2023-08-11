@@ -16,4 +16,5 @@
    quick_start/index
    callbacks/index
    selfplay/index
+   arena/index
    api_docs/openrl
