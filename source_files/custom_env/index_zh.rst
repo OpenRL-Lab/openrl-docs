@@ -6,12 +6,12 @@
 
 由于强化学习环境多种多样，任何强化学习学习框架都不可能直接接入所有未知的环境。在本章节中，我们提供几种接入用户自定义环境的方法：
 
-* 接入符合Gymnasium接口的环境 (:ref:`Gymnasium`)
-* 接入符合OpenAI Gym接口的环境 (:ref:`Gym`)
-* 接入符合PettingZoo接口的环境 (:ref:`PettingZoo`)
-* 通过实现 ``make_custom_envs`` 来定制化创建环境 (:ref:`MoreExamples1`)
-* 通过实现 ``make`` 来定制化创建环境 (:ref:`MoreExamples2`)
-* 通过自定义Wrapper来接入已有环境 (:ref:`MoreExamples3`)
+* :ref:`Gymnasium`
+* :ref:`Gym`
+* :ref:`PettingZoo`
+* :ref:`MoreExamples1`
+* :ref:`MoreExamples2`
+* :ref:`MoreExamples3`
 
 
 .. _Gymnasium:
