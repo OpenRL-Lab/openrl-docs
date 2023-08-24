@@ -162,5 +162,6 @@ source/index.rst
 source/callbacks
 source/selfplay
 source/arena
+source/custom_env
 # End of https://www.toptal.com/developers/gitignore/api/python,jupyternotebooks
 .vscode

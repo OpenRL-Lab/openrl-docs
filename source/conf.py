@@ -17,6 +17,7 @@ import os
 import sys
 from shutil import copyfile
 from pathlib import Path
+import re
 
 release = "0.1.1"
 
@@ -104,7 +105,9 @@ def copy_files(lang):
                     file_directory.mkdir(parents=True)
 
             if "_{}.rst".format(lang) in file_name:
-                copyfile(file, current_dir / file_name.replace("_{}".format(lang), ""))
+                pattern = r'_{0}(?!.*_{0})'.format(re.escape(lang))
+                new_file_name = re.sub(pattern, '', file_name)
+                copyfile(file, current_dir / new_file_name)
             else:
                 copyfile(file, current_dir / file_name)
 
