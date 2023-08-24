@@ -17,6 +17,7 @@ Welcome to OpenRL's documentation!
 
    intro/index
    quick_start/index
+   custom_env/index
    callbacks/index
    selfplay/index
    arena/index
