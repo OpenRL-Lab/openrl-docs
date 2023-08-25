@@ -285,7 +285,7 @@ PettingZoo是一个多智能体环境库，用户可以通过PettingZoo来创建
 -------------------
 
 通常，我们使用OpenRL框架自带的 ``make`` 函数来创建环境，``make`` 函数会帮我们自动生成多个并行(或者串行)的环境。
-如果用户还有自身额外的需求，还可以参考``make`` 函数的实现来实现自己的 ``make`` 函数。具体例子可以参考OpenRL中的 `Retro环境的例子 <https://github.com/OpenRL-Lab/openrl/blob/main/examples/retro>`_ 。
+如果用户还有自身额外的需求，还可以参考 ``make`` 函数的实现来实现自己的 ``make`` 函数。具体例子可以参考OpenRL中的 `Retro环境的例子 <https://github.com/OpenRL-Lab/openrl/blob/main/examples/retro>`_ 。
 在该环境中，我们在 `custom_registration.py <https://github.com/OpenRL-Lab/openrl/blob/main/examples/retro/custom_registration.py>`_ 中实现了自定义的 ``make`` 函数，并在创建环境时进行了调用。
 
 .. _MoreExamples3:
