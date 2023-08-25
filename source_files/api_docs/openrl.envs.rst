@@ -10,11 +10,13 @@ Subpackages
    openrl.envs.PettingZoo
    openrl.envs.common
    openrl.envs.connect_env
+   openrl.envs.dmc
    openrl.envs.gridworld
    openrl.envs.gymnasium
    openrl.envs.mpe
    openrl.envs.nlp
    openrl.envs.offline
+   openrl.envs.snake
    openrl.envs.super_mario
    openrl.envs.toy_envs
    openrl.envs.vec_env
