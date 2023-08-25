@@ -6,12 +6,12 @@
 
 由于强化学习环境多种多样，任何强化学习学习框架都不可能直接接入所有未知的环境。在本章节中，我们提供几种接入用户自定义环境的方法：
 
-* 接入符合Gymnasium接口的环境 (:ref:`Gymnasium`)
-* 接入符合OpenAI Gym接口的环境 (:ref:`Gym`)
-* 接入符合PettingZoo接口的环境 (:ref:`PettingZoo`)
-* 通过实现 ``make_custom_envs`` 来定制化创建环境 (:ref:`MoreExamples1`)
-* 通过实现 ``make`` 来定制化创建环境 (:ref:`MoreExamples2`)
-* 通过自定义Wrapper来接入已有环境 (:ref:`MoreExamples3`)
+* :ref:`Gymnasium`
+* :ref:`Gym`
+* :ref:`PettingZoo`
+* :ref:`MoreExamples1`
+* :ref:`MoreExamples2`
+* :ref:`MoreExamples3`
 
 
 .. _Gymnasium:
@@ -22,7 +22,7 @@
 对于单智能体环境，我们推荐用户把自己的环境包装成符合 Gymnasium 接口的环境。用户可以参考 `官方文档 <https://gymnasium.farama.org/api/env/>`_ 来实现Gymnasium所需要的接口。
 我们在 `这里 <https://github.com/OpenRL-Lab/openrl/blob/main/examples/custom_env/gymnasium_env.py>`_ 给出了一个简单的示例，用户可以参考该示例来实现自己的环境。
 
-下面，我们给出该例子的详细解释。首先，我们需要创建一个名叫 ``gymnasium_env.py`` 的文件，并在里面创建自己的环境，该环境需要继承``gymnasium.Env`` 类。
+下面，我们给出该例子的详细解释。首先，我们需要创建一个名叫 ``gymnasium_env.py`` 的文件，并在里面创建自己的环境，该环境需要继承 ``gymnasium.Env`` 类。
 在该类中，我们需要实现 ``reset``、``step``、``render``、``close``、``seed``、``action_space``、``observation_space`` 等方法:
 
 .. code-block:: python
@@ -118,7 +118,7 @@
 可能某些过去的强化学习环境是使用OpenAI Gym接口实现的，这些环境也可以接入OpenRL框架。
 我们在 `这里 <https://github.com/OpenRL-Lab/openrl/blob/main/examples/custom_env/openai_gym_env.py>`_ 给出了一个简单的示例，展示了如何在OpenRL框架中使用自定义的OpenAI Gym接口的环境。
 
-下面，我们给出该例子的详细解释。首先，我们需要创建一个名叫 ``openai_gym_env.py`` 的文件，并在里面创建自己的环境，该环境需要继承``gym.Env`` 类：
+下面，我们给出该例子的详细解释。首先，我们需要创建一个名叫 ``openai_gym_env.py`` 的文件，并在里面创建自己的环境，该环境需要继承 ``gym.Env`` 类：
 
 .. code-block:: python
 

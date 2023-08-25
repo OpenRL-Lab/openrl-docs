@@ -7,12 +7,12 @@ Integrate User-defined Environments
 Given the diversity of reinforcement learning environments, no reinforcement learning framework can directly interface with all unknown environments.
 In this section, we offer several methods for connecting custom user-defined environments:
 
-* Integrate an environment compliant with the Gymnasium interface (:ref:`Gymnasium`)
-* Integrate an environment compliant with the OpenAI Gym interface (:ref:`Gym`)
-* Integrate an environment compliant with the PettingZoo interface (:ref:`PettingZoo`)
-* Customize environment creation by implementing ``make_custom_envs`` (:ref:`MoreExamples1`)
-* Customize environment creation by implementing ``make`` (:ref:`MoreExamples2`)
-* Integrate existing environments through custom Wrappers (:ref:`MoreExamples3`)
+* :ref:`Gymnasium`
+* :ref:`Gym`
+* :ref:`PettingZoo`
+* :ref:`MoreExamples1`
+* :ref:`MoreExamples2`
+* :ref:`MoreExamples3`
 
 .. _Gymnasium:
 
