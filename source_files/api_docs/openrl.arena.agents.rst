@@ -12,6 +12,14 @@ openrl.arena.agents.base\_agent module
    :undoc-members:
    :show-inheritance:
 
+openrl.arena.agents.jidi\_agent module
+--------------------------------------
+
+.. automodule:: openrl.arena.agents.jidi_agent
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 openrl.arena.agents.local\_agent module
 ---------------------------------------
 

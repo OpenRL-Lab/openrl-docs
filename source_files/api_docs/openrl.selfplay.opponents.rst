@@ -12,6 +12,14 @@ openrl.selfplay.opponents.base\_opponent module
    :undoc-members:
    :show-inheritance:
 
+openrl.selfplay.opponents.jidi\_opponent module
+-----------------------------------------------
+
+.. automodule:: openrl.selfplay.opponents.jidi_opponent
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 openrl.selfplay.opponents.network\_opponent module
 --------------------------------------------------
 
