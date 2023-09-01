@@ -6,6 +6,8 @@
 
 OpenRL为具有竞争性的环境提供了一套竞技场框架，通过OpenRL自博弈训练后的智能体以及基于规则的智能体均可以在竞技场中进行对战和评测。
 用于可以在 `这里 <https://github.com/OpenRL-Lab/openrl/tree/main/examples/arena>`_ 找到竞技场的示例代码。
+OpenRL甚至还支持及第平台提交格式智能体的本地评测，我们提供了本地评测及第平台上 `贪吃蛇游戏 <https://github.com/OpenRL-Lab/openrl/tree/main/examples/snake#evaluate-jidi-submissions-locally>`_
+和 `谷歌足球游戏 <https://github.com/OpenRL-Lab/TiZero#evaluate-jidi-submissions-locally>`_ 的例子。
 
 通过竞技场进行智能体评测
 -------------------
@@ -48,3 +50,49 @@ OpenRL为具有竞争性的环境提供了一套竞技场框架，通过OpenRL�
 最后我们可以打印出对局统计结果。
 
 关于竞技场中智能体的写法，可以参考我们给的 `示例 <https://github.com/OpenRL-Lab/openrl/tree/main/examples/arena>`_ 。
+
+
+使用OpenRL对及第平台提交的智能体进行本地评测
+--------------------------------------
+
+OpenRL支持对 `及第平台 <http://www.jidiai.cn/>`_ 提交的智能体进行本地评测，用户训练完自己的智能体并构造自己的提交代码后，可以直接在OpenRL框架中对其进行本地评测！
+我们提供了本地评测及第平台上 `贪吃蛇游戏 <https://github.com/OpenRL-Lab/openrl/tree/main/examples/snake#evaluate-jidi-submissions-locally>`_
+和 `谷歌足球游戏 <https://github.com/OpenRL-Lab/TiZero#evaluate-jidi-submissions-locally>`_ 的例子。
+
+以贪吃蛇游戏为例，我们可以通过以下代码来对及第平台上的智能体进行本地评测：
+
+
+.. code-block:: python
+
+    env_wrappers = [RecordWinner]
+    player_num = 3
+    arena = make_arena(
+        f"snakes_{player_num}v{player_num}", env_wrappers=env_wrappers, render=render
+    )
+    # 从本地文件加载符合及第平台提交规范的智能体
+    agent1 = JiDiAgent("./submissions/rule_v1", player_num=player_num)
+    agent2 = JiDiAgent("./submissions/rl", player_num=player_num)
+
+    arena.reset(
+        agents={"agent1": agent1, "agent2": agent2},
+        total_games=10,
+        max_game_onetime=5,
+        seed=0,
+    )
+    result = arena.run(parallel=True)
+    arena.close()
+    print(result)
+
+在这个例子中，我们通过 ``JiDiAgent`` 来加载符合及第平台提交规范的智能体。然后后续的使用方式和之前的一样。
+在该例子中，我们加载了一个基于规则的智能体和一个基于强化学习训练的智能体，让他们进行对战并统计胜负信息。
+该例子的完整代码和提交智能体可以在 `这里 <https://github.com/OpenRL-Lab/openrl/tree/main/examples/snake>`_ 找到。
+
+此外，对于谷歌足球游戏的本地评测，我们在 `TiZero <https://github.com/OpenRL-Lab/TiZero>`_ 项目中实现了一个简单易用的本地评测工具。
+用户在通过 ``pip install tizero`` 安装好TiZero后，可以通过以下命令来对及第平台上的智能体进行本地评测：
+
+.. code-block:: bash
+
+    tizero eval --left_agent submission_dir1 --right_agent submission_dir2 --total_game 10
+
+其中 ``submission_dir1`` 和 ``submission_dir2`` 分别是两个符合及第平台提交规范的智能体的目录， ``total_game`` 是总共进行的对局数。
+我们在 `这里 <https://github.com/OpenRL-Lab/TiZero#evaluate-jidi-submissions-locally>`_ 中提供了我们训练的TiZero智能体，用户可以直接使用该命令来对其进行本地评测。
