@@ -21,4 +21,5 @@ Welcome to OpenRL's documentation!
    callbacks/index
    selfplay/index
    arena/index
+   sb3/index
    api_docs/openrl
