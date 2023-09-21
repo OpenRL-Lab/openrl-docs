@@ -163,5 +163,6 @@ source/callbacks
 source/selfplay
 source/arena
 source/custom_env
+source/sb3
 # End of https://www.toptal.com/developers/gitignore/api/python,jupyternotebooks
 .vscode

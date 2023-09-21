@@ -14,7 +14,7 @@ Currently, OpenRL framework has the following features:
 #. Supports **Self-Play** training.
 #. Supports reinforcement learning training for **natural language tasks** (such as dialogue tasks).
 #. Support **Arena** , which allows convenient evaluation of various agents in a competitive environment. Supports local testing of submissions to the `JiDi platform <http://www.jidiai.cn/>`_.
-#. Supports model import from `Hugging Face <https://huggingface.co/models>`_.
+#. Supports model import from `Hugging Face <https://huggingface.co/models>`_. Supports loading `Stable-baselines3 models from Hugging Face <https://openrl-docs.readthedocs.io/en/latest/sb3/index.html>`_ for testing and training.
 #. Supports models such as LSTM, GRU, Transformer, etc.
 #. Supports various training accelerations, such as mixed precision training, data collecting with half-precision policy network, etc.
 #. Support `gymnasium <https://gymnasium.farama.org/>`_ environments.
