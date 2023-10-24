@@ -216,7 +216,7 @@
 
 PettingZoo是一个多智能体环境库，用户可以通过PettingZoo来创建多智能体环境。我们在 `这里 <https://github.com/OpenRL-Lab/openrl/blob/main/examples/custom_env/pettingzoo_env.py>`_ 给出了一个简单的示例，用户可以参考该示例来实现自己的环境。
 
-下面，我们给出该例子的详细解释。首先，我们需要创建一个名叫 ``rock_paper_scissors.py`` 的文件，并在里面创建自己的环境，该环境需要继承``pettingzoo.AECEnv`` 类。
+下面，我们给出该例子的详细解释。首先，我们需要创建一个名叫 ``rock_paper_scissors.py`` 的文件，并在里面创建自己的环境，该环境需要继承 ``pettingzoo.AECEnv`` 类。
 由于PettingZoo环境定义比较复杂，我们直接在 `这里 <https://github.com/OpenRL-Lab/openrl/blob/main/examples/custom_env/rock_paper_scissors.py>`_ 给出我们一个自定义的环境，用户可以参考该环境来实现自己的环境：
 
 .. code-block:: python
