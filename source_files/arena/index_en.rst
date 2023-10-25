@@ -9,6 +9,7 @@ Example code for the arena can be found `here <https://github.com/OpenRL-Lab/ope
 OpenRL even supports local evaluation of agents submitted in JiDi platform format.
 We provide examples for local evaluation on the JiDi platform for the `Snake game <https://github.com/OpenRL-Lab/openrl/tree/main/examples/snake#evaluate-jidi-submissions-locally>`_ and
 `Google Research Football game <https://github.com/OpenRL-Lab/TiZero#evaluate-jidi-submissions-locally>`_.
+For more examples on evaluating PettingZoo environments, refer to this `link <https://github.com/OpenRL-Lab/openrl/blob/main/examples/arena/evaluate_more_envs.py>`_ .
 
 Evaluating Agents Through the Arena
 -------------------

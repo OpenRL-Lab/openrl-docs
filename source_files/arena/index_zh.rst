@@ -8,6 +8,7 @@ OpenRL为具有竞争性的环境提供了一套竞技场框架，通过OpenRL�
 用于可以在 `这里 <https://github.com/OpenRL-Lab/openrl/tree/main/examples/arena>`_ 找到竞技场的示例代码。
 OpenRL甚至还支持及第平台提交格式智能体的本地评测，我们提供了本地评测及第平台上 `贪吃蛇游戏 <https://github.com/OpenRL-Lab/openrl/tree/main/examples/snake#evaluate-jidi-submissions-locally>`_
 和 `谷歌足球游戏 <https://github.com/OpenRL-Lab/TiZero#evaluate-jidi-submissions-locally>`_ 的例子。
+更多PettingZoo环境评测的例子可以参考 `这里 <https://github.com/OpenRL-Lab/openrl/blob/main/examples/arena/evaluate_more_envs.py>`_ 。
 
 通过竞技场进行智能体评测
 -------------------
