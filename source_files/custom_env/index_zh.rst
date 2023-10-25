@@ -251,7 +251,7 @@ PettingZoo是一个多智能体环境库，用户可以通过PettingZoo来创建
     agent = Agent(Net(env)) # 直接传入该环境即可
     agent.train(5000) # 开始训练！
 
-从该例子可以看出，只要用户实现了符合PettingZoo接口的环境，便可以轻松地接入并使用OpenRL。
+从该例子可以看出，只要用户实现了符合PettingZoo接口的环境，便可以轻松地接入并使用OpenRL。更多接入PettingZoo环境的例子可以参考 `这里 <https://github.com/OpenRL-Lab/openrl/blob/main/examples/arena/evaluate_more_envs.py>`_ 。
 
 
 .. _MoreExamples1:

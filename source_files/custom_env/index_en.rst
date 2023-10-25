@@ -266,6 +266,7 @@ Next, we need to register this environment in OpenRL, and then we can use ``make
     agent.train(5000) # Start training!
 
 From this example, it's evident that once users have developed an environment compliant with the PettingZoo interface, it can be effortlessly integrated and utilized with OpenRL.
+For more examples on integrating PettingZoo environments, refer to this `link <https://github.com/OpenRL-Lab/openrl/blob/main/examples/arena/evaluate_more_envs.py>`_ .
 
 .. _MoreExamples1:
 
