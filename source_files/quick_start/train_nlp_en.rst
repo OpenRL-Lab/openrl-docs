@@ -346,7 +346,7 @@ Next enable DeepSpeed in `nlp_ppo_ds.yaml <https://github.com/OpenRL-Lab/openrl/
 
 .. tip::
 
-    Episode_length and num_mini_batch can be found in `nlp_ppo_ds.yaml <https://github.com/OpenRL-Lab/openrl/blob/main/examples/nlp/nlp_ppo_ds.yaml>`_; env_num can be found in `train_ppo.py <https://github.com/OpenRL-Lab/openrl/blob/main/examples/nlp/train_ppo.py>`_; please ensure that all parameters meet the following relationship: train_batch_size = episode_length * env_num / num_mini_batch. 
+    ``Episode_length`` and ``num_mini_batch`` can be found in `nlp_ppo_ds.yaml <https://github.com/OpenRL-Lab/openrl/blob/main/examples/nlp/nlp_ppo_ds.yaml>`_; ``env_num`` can be found in `train_ppo.py <https://github.com/OpenRL-Lab/openrl/blob/main/examples/nlp/train_ppo.py>`_; please ensure that all parameters meet the following relationship: ``train_batch_size = episode_length * env_num / num_mini_batch``. 
 
 Finally, please run the command
 
@@ -369,6 +369,17 @@ Supervised Learning None             0.164            0.137            0.234    
 RL4LMs              11.26            0.169            0.144            0.198           0.071            **0.455**        18.83
 OpenRL              **13.20(+17%)**  **0.181(+10%)**  **0.153(+12%)**  **0.292(+25%)** **0.090(+43%)**  0.435(+1.9%)     18.69
 =================== ================ ================ ================ =============== ================ ================ ==================
+
+The table below shows that compared to OpenRL with Data-Parallel, OpenRL with DeepSpeed has a faster training speed:
+
+=============================== ================ ================ ========================= =============== ================================ 
+\                               FPS(Speed)       Number of GPUs   Memory Usage per GPU(MB)  GPU Type        Train Micro Batch Size per GPU
+=============================== ================ ================ ========================= =============== ================================ 
+DeepSpeed w/ GPT-2-small        **5.11(+30%)**   2                13537                     RTX 3090        8
+Data-Parallel w/ GPT-2-small    3.94             2                7207                      RTX 3090        8
+DeepSpeed w/ OPT-1.3B           **7.09(+35%)**   4                35360                     NVIDIA A100     8
+Data-Parallel w/ OPT-1.3B       5.25             4                15854                     NVIDIA A100     8
+=============================== ================ ================ ========================= =============== ================================ 
 
 
 
