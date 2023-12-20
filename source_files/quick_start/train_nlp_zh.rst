@@ -306,7 +306,7 @@ OpenRL          **13.20(+17%)**  **0.181(+10%)**  **0.153(+12%)**  **0.292(+25%)
 下表显示，与采用 DataParallel 的 OpenRL 相比，采用 DeepSpeed 的 OpenRL 具有更快的训练速度：
 
 =============================== ================ ================ ========================= =============== ================================ 
-\                               FPS              # GPUs           Memory Usage per GPU(MB)  GPU Type        Train Micro Batch Size per GPU
+\                               FPS(Speed)       Number of GPUs   Memory Usage per GPU(MB)  GPU Type        Train Micro Batch Size per GPU
 =============================== ================ ================ ========================= =============== ================================ 
 DeepSpeed w/ GPT-2-small        **5.11(+30%)**   2                13537                     RTX 3090        8
 Data-Parallel w/ GPT-2-small    3.94             2                7207                      RTX 3090        8
