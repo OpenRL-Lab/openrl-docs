@@ -287,6 +287,66 @@ OpenRL还提供了一键开启混合精度训练的功能。用户只需要在�
     并在 `nlp_ppo.yaml <https://github.com/OpenRL-Lab/openrl/blob/main/examples/nlp/nlp_ppo.yaml>`_ 里找到训练nlp任务的各项参数。
     用户可以执行 python train_ppo.py --config nlp_ppo.yaml 指令以训练对话任务。
 
+使用 DeepSpeed 加速训练
+--------------------------------------------------
+
+OpenRL 还提供了一项功能，可以一步启用 DeepSpeed 训练。用户首先需要添加两个配置文件：
+
+.. code-block:: yaml
+
+    # ds_config.yaml
+    {
+      "train_batch_size": 32, # train_batch_size = episode_length * env_num / num_mini_batch
+      "train_micro_batch_size_per_gpu": 16, # train_micro_batch_size_per_gpu = train_batch_size / num_gpu
+      "steps_per_print": 10,
+      "zero_optimization": {
+          "stage": 2, # 默认使用 Zero2
+          "reduce_bucket_size": 5e7,
+          "allgather_bucket_size": 5e7
+      },
+      "fp16": {"enabled": false, "loss_scale_window": 100} # 是否使用fp16
+    }
+    # eval_ds_config.yaml
+    {
+      "train_batch_size": 32,
+      "train_micro_batch_size_per_gpu": 16,
+      "steps_per_print": 10,
+      "zero_optimization": {
+        "stage": 0, # 默认对 ref_model 和奖励模型使用 cpu_offload
+        "offload_param": {"device": "cpu"}
+    },
+      "fp16": {"enabled": false} # 是否使用fp16
+    }
+
+接下来在 `nlp_ppo_ds.yaml <https://github.com/OpenRL-Lab/openrl/blob/main/examples/nlp/nlp_ppo_ds.yaml>`_ 中启用 DeepSpeed。
+
+.. code-block:: yaml
+
+    use_deepspeed: true
+    use_fp16: false
+    use_offload: false
+    deepspeed_config: ds_config.json
+    reward_class: 
+      id: "NLPReward"
+      args: { 
+        "use_deepspeed": true,
+        "ref_ds_config": "eval_ds_config.json", 
+        "ref_model": "rajkumarrrk/gpt2-fine-tuned-on-daily-dialog",
+        "intent_ds_config": "eval_ds_config.json", 
+        "intent_model": "rajkumarrrk/roberta-daily-dialog-intent-classifier",
+      }
+
+.. tip::
+
+    ``Episode_length`` 和 ``num_mini_batch`` 可以在 `nlp_ppo_ds.yaml <https://github.com/OpenRL-Lab/openrl/blob/main/examples/nlp/nlp_ppo_ds.yaml>`_ 中找到；
+    ``env_num`` 可以在 `train_ppo.py <https://github.com/OpenRL-Lab/openrl/blob/main/examples/nlp/train_ppo.py>`_ 中找到；
+    请确保所有参数满足以下关系：``train_batch_size = Episode_length * env_num / num_mini_batch``。
+
+最后请运行命令
+
+.. code-block:: yaml
+
+    deepspeed train_ppo.py --config nlp_ppo_ds.yaml
 
 OpenRL训练结果
 ---------------
