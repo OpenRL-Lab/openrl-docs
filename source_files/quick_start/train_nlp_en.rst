@@ -288,14 +288,11 @@ Users only need to add the following parameters in the configuration file:
     # nlp_ppo.yaml
     use_amp: true # Enable automatic mixed precision training.
 
-
 .. tip::
 
     Users can find sample code for training nlp tasks in `train_ppo.py <https://github.com/OpenRL-Lab/openrl/blob/main/examples/nlp/train_ppo.py>`_ .
     Find the parameters for training nlp tasks in `nlp_ppo.yaml <https://github.com/OpenRL-Lab/openrl/blob/main/examples/nlp/nlp_ppo.yaml>`_ .
     Users can execute python train_ppo.py --config nlp_ppo.yaml to train the conversation task.
-
-
 
 Accelerate training with DeepSpeed
 ---------------------------------------------------
@@ -329,7 +326,6 @@ Users first need to add two configuration file:
   "fp16": {"enabled": false} # whether to use fp16
 }
 
-
 Next enable DeepSpeed in `nlp_ppo_ds.yaml <https://github.com/OpenRL-Lab/openrl/blob/main/examples/nlp/nlp_ppo_ds.yaml>`_.
 
 .. code-block:: yaml
@@ -338,7 +334,6 @@ use_deepspeed: true
 use_fp16: false
 use_offload: false
 deepspeed_config: ds_config.json
-
 reward_class: 
   id: "NLPReward"
   args: { 
@@ -349,17 +344,14 @@ reward_class:
     "intent_model": "rajkumarrrk/roberta-daily-dialog-intent-classifier",
   }
 
-
-
 .. tip::
 Episode_length and num_mini_batch can be found in `nlp_ppo_ds.yaml <https://github.com/OpenRL-Lab/openrl/blob/main/examples/nlp/nlp_ppo_ds.yaml>`_; env_num can be found in `train_ppo.py <https://github.com/OpenRL-Lab/openrl/blob/main/examples/nlp/train_ppo.py>`_; please ensure that all parameters meet the following relationship: train_batch_size = episode_length * env_num / num_mini_batch. 
 
+Finally, please run the command
 
 .. code-block:: yaml
 
-Finally, please run the command deepspeed train_ppo.py --config nlp_ppo_ds.yaml
-
-
+deepspeed train_ppo.py --config nlp_ppo_ds.yaml
 
 Training results of OpenRL
 ---------------------------
