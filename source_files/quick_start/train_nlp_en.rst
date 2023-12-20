@@ -345,6 +345,7 @@ Next enable DeepSpeed in `nlp_ppo_ds.yaml <https://github.com/OpenRL-Lab/openrl/
       }
 
 .. tip::
+
     Episode_length and num_mini_batch can be found in `nlp_ppo_ds.yaml <https://github.com/OpenRL-Lab/openrl/blob/main/examples/nlp/nlp_ppo_ds.yaml>`_; env_num can be found in `train_ppo.py <https://github.com/OpenRL-Lab/openrl/blob/main/examples/nlp/train_ppo.py>`_; please ensure that all parameters meet the following relationship: train_batch_size = episode_length * env_num / num_mini_batch. 
 
 Finally, please run the command
