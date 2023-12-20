@@ -302,56 +302,56 @@ Users first need to add two configuration file:
 
 .. code-block:: yaml
 
-# ds_config.yaml
-{
-  "train_batch_size": 32, # train_batch_size = episode_length * env_num / num_mini_batch
-  "train_micro_batch_size_per_gpu": 16, # train_micro_batch_size_per_gpu = train_batch_size / num_gpu
-  "steps_per_print": 10,
-  "zero_optimization": {
-      "stage": 2, # default to use Zero2
-      "reduce_bucket_size": 5e7,
-      "allgather_bucket_size": 5e7
-  },
-  "fp16": {"enabled": false, "loss_scale_window": 100} # whether to use fp16
-}
-# eval_ds_config.yaml
-{
-  "train_batch_size": 32,
-  "train_micro_batch_size_per_gpu": 16,
-  "steps_per_print": 10,
-  "zero_optimization": {
-    "stage": 0, # default to use cpu offload for ref_model and reward model
-    "offload_param": {"device": "cpu"}
-},
-  "fp16": {"enabled": false} # whether to use fp16
-}
+    # ds_config.yaml
+    {
+      "train_batch_size": 32, # train_batch_size = episode_length * env_num / num_mini_batch
+      "train_micro_batch_size_per_gpu": 16, # train_micro_batch_size_per_gpu = train_batch_size / num_gpu
+      "steps_per_print": 10,
+      "zero_optimization": {
+          "stage": 2, # default to use Zero2
+          "reduce_bucket_size": 5e7,
+          "allgather_bucket_size": 5e7
+      },
+      "fp16": {"enabled": false, "loss_scale_window": 100} # whether to use fp16
+    }
+    # eval_ds_config.yaml
+    {
+      "train_batch_size": 32,
+      "train_micro_batch_size_per_gpu": 16,
+      "steps_per_print": 10,
+      "zero_optimization": {
+        "stage": 0, # default to use cpu offload for ref_model and reward model
+        "offload_param": {"device": "cpu"}
+    },
+      "fp16": {"enabled": false} # whether to use fp16
+    }
 
 Next enable DeepSpeed in `nlp_ppo_ds.yaml <https://github.com/OpenRL-Lab/openrl/blob/main/examples/nlp/nlp_ppo_ds.yaml>`_.
 
 .. code-block:: yaml
 
-use_deepspeed: true
-use_fp16: false
-use_offload: false
-deepspeed_config: ds_config.json
-reward_class: 
-  id: "NLPReward"
-  args: { 
-    "use_deepspeed": true,
-    "ref_ds_config": "eval_ds_config.json", # use eval ds config for ref model
-    "ref_model": "rajkumarrrk/gpt2-fine-tuned-on-daily-dialog",
-    "intent_ds_config": "eval_ds_config.json", # use eval ds config for reward model
-    "intent_model": "rajkumarrrk/roberta-daily-dialog-intent-classifier",
-  }
+    use_deepspeed: true
+    use_fp16: false
+    use_offload: false
+    deepspeed_config: ds_config.json
+    reward_class: 
+      id: "NLPReward"
+      args: { 
+        "use_deepspeed": true,
+        "ref_ds_config": "eval_ds_config.json", # use eval ds config for ref model
+        "ref_model": "rajkumarrrk/gpt2-fine-tuned-on-daily-dialog",
+        "intent_ds_config": "eval_ds_config.json", # use eval ds config for reward model
+        "intent_model": "rajkumarrrk/roberta-daily-dialog-intent-classifier",
+      }
 
 .. tip::
-Episode_length and num_mini_batch can be found in `nlp_ppo_ds.yaml <https://github.com/OpenRL-Lab/openrl/blob/main/examples/nlp/nlp_ppo_ds.yaml>`_; env_num can be found in `train_ppo.py <https://github.com/OpenRL-Lab/openrl/blob/main/examples/nlp/train_ppo.py>`_; please ensure that all parameters meet the following relationship: train_batch_size = episode_length * env_num / num_mini_batch. 
+    Episode_length and num_mini_batch can be found in `nlp_ppo_ds.yaml <https://github.com/OpenRL-Lab/openrl/blob/main/examples/nlp/nlp_ppo_ds.yaml>`_; env_num can be found in `train_ppo.py <https://github.com/OpenRL-Lab/openrl/blob/main/examples/nlp/train_ppo.py>`_; please ensure that all parameters meet the following relationship: train_batch_size = episode_length * env_num / num_mini_batch. 
 
 Finally, please run the command
 
 .. code-block:: yaml
 
-deepspeed train_ppo.py --config nlp_ppo_ds.yaml
+    deepspeed train_ppo.py --config nlp_ppo_ds.yaml
 
 Training results of OpenRL
 ---------------------------
