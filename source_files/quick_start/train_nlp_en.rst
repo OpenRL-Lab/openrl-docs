@@ -297,6 +297,15 @@ Users only need to add the following parameters in the configuration file:
 
 
 
+Accelerate training with DeepSpeed
+---------------------------------------------------
+
+OpenRL also provides a feature to enable DeepSpeed training in one step.
+Users first need to add two configuration file:
+
+
+
+
 Training results of OpenRL
 ---------------------------
 
@@ -312,6 +321,7 @@ Supervised Learning None             0.164            0.137            0.234    
 RL4LMs              11.26            0.169            0.144            0.198           0.071            **0.455**        18.83
 OpenRL              **13.20(+17%)**  **0.181(+10%)**  **0.153(+12%)**  **0.292(+25%)** **0.090(+43%)**  0.435(+1.9%)     18.69
 =================== ================ ================ ================ =============== ================ ================ ==================
+
 
 
 
@@ -355,3 +365,4 @@ Execute **python chat.py** to start a conversation with the trained agent:
     images/chat.gif
     :width: 800
     :align: center
+
