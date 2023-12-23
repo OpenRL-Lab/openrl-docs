@@ -12,6 +12,7 @@ OpenRL 是由第四范式强化学习团队开发的基于PyTorch的强化学习
 #. 支持 **离线强化学习** （Offline RL）算法。
 #. 支持 **自博弈** （Self-Play）训练。
 #. 支持 **自然语言任务** （如对话任务）的强化学习训练。
+#. 支持 `DeepSpeed <../quick_start/train_nlp.html#deepspeed>`_ 训练。
 #. 支持 **竞技场** 功能，可以在多智能体对抗性环境中方便地对各种智能体进行评测。支持对 `及第平台 <http://www.jidiai.cn/>`_ 的提交进行本地测试。
 #. 支持 `Hugging Face <https://huggingface.co/models>`_ 上的模型导入。支持加载Hugging Face上 `Stable-baselines3的模型 <https://openrl-docs.readthedocs.io/zh/latest/sb3/index.html>`_ 来进行测试和训练。
 #. 支持LSTM，GRU，Transformer等模型。

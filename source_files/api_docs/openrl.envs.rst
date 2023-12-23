@@ -10,8 +10,8 @@ Subpackages
    openrl.envs.PettingZoo
    openrl.envs.common
    openrl.envs.connect_env
-   openrl.envs.dmc
    openrl.envs.gridworld
+   openrl.envs.gym_pybullet_drones
    openrl.envs.gymnasium
    openrl.envs.mpe
    openrl.envs.nlp

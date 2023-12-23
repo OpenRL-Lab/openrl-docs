@@ -11,7 +11,6 @@ Subpackages
    openrl.selfplay.opponents
    openrl.selfplay.sample_strategy
    openrl.selfplay.selfplay_api
-   openrl.selfplay.strategies
    openrl.selfplay.wrappers
 
 Submodules

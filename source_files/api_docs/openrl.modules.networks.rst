@@ -68,6 +68,14 @@ openrl.modules.networks.policy\_network module
    :undoc-members:
    :show-inheritance:
 
+openrl.modules.networks.policy\_network\_gpt module
+---------------------------------------------------
+
+.. automodule:: openrl.modules.networks.policy_network_gpt
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 openrl.modules.networks.policy\_value\_network module
 -----------------------------------------------------
 
@@ -80,6 +88,14 @@ openrl.modules.networks.policy\_value\_network\_gpt module
 ----------------------------------------------------------
 
 .. automodule:: openrl.modules.networks.policy_value_network_gpt
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+openrl.modules.networks.policy\_value\_network\_sb3 module
+----------------------------------------------------------
+
+.. automodule:: openrl.modules.networks.policy_value_network_sb3
    :members:
    :undoc-members:
    :show-inheritance:
@@ -104,6 +120,14 @@ openrl.modules.networks.value\_network module
 ---------------------------------------------
 
 .. automodule:: openrl.modules.networks.value_network
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+openrl.modules.networks.value\_network\_gpt module
+--------------------------------------------------
+
+.. automodule:: openrl.modules.networks.value_network_gpt
    :members:
    :undoc-members:
    :show-inheritance:

@@ -4,14 +4,6 @@ openrl.envs.snake package
 Submodules
 ----------
 
-openrl.envs.snake.common module
--------------------------------
-
-.. automodule:: openrl.envs.snake.common
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 openrl.envs.snake.discrete module
 ---------------------------------
 
@@ -48,14 +40,6 @@ openrl.envs.snake.snake module
 ------------------------------
 
 .. automodule:: openrl.envs.snake.snake
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-openrl.envs.snake.snake\_3v3 module
------------------------------------
-
-.. automodule:: openrl.envs.snake.snake_3v3
    :members:
    :undoc-members:
    :show-inheritance:
