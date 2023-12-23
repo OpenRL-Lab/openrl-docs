@@ -290,7 +290,7 @@ OpenRL还提供了一键开启混合精度训练的功能。用户只需要在�
 使用 DeepSpeed 加速训练
 --------------------------------------------------
 
-OpenRL 还提供了一项功能，可以一步启用 DeepSpeed 训练。用户首先需要添加两个配置文件：
+OpenRL 还提供了一项功能，可以一步启用 `DeepSpeed <https://github.com/microsoft/DeepSpeed>`_ 训练。用户首先需要添加两个配置文件：
 
 .. code-block:: yaml
 
@@ -318,7 +318,7 @@ OpenRL 还提供了一项功能，可以一步启用 DeepSpeed 训练。用户�
       "fp16": {"enabled": false} # 是否使用fp16
     }
 
-接下来在 `nlp_ppo_ds.yaml <https://github.com/OpenRL-Lab/openrl/blob/main/examples/nlp/nlp_ppo_ds.yaml>`_ 中启用 DeepSpeed。
+接下来在 `nlp_ppo_ds.yaml <https://github.com/OpenRL-Lab/openrl/blob/main/examples/nlp/nlp_ppo_ds.yaml>`_ 中启用 DeepSpeed：
 
 .. code-block:: yaml
 
@@ -338,13 +338,13 @@ OpenRL 还提供了一项功能，可以一步启用 DeepSpeed 训练。用户�
 
 .. tip::
 
-    ``Episode_length`` 和 ``num_mini_batch`` 可以在 `nlp_ppo_ds.yaml <https://github.com/OpenRL-Lab/openrl/blob/main/examples/nlp/nlp_ppo_ds.yaml>`_ 中找到；
+    ``episode_length`` 和 ``num_mini_batch`` 可以在 `nlp_ppo_ds.yaml <https://github.com/OpenRL-Lab/openrl/blob/main/examples/nlp/nlp_ppo_ds.yaml>`_ 中找到；
     ``env_num`` 可以在 `train_ppo.py <https://github.com/OpenRL-Lab/openrl/blob/main/examples/nlp/train_ppo.py>`_ 中找到；
-    请确保所有参数满足以下关系：``train_batch_size = Episode_length * env_num / num_mini_batch``。
+    请确保所有参数满足以下关系：``train_batch_size = episode_length * env_num / num_mini_batch`` 。
 
-最后请运行命令
+最后执行以下命令即可启动训练：
 
-.. code-block:: yaml
+.. code-block:: bash
 
     deepspeed train_ppo.py --config nlp_ppo_ds.yaml
 
@@ -362,6 +362,7 @@ OpenRL的训练速度更快（在同样3090显卡的机器上，速度提升 17.
 RL4LMs          11.26            0.169            0.144            0.198           0.071            **0.455**        18.83
 OpenRL          **13.20(+17%)**  **0.181(+10%)**  **0.153(+12%)**  **0.292(+25%)** **0.090(+43%)**  0.435(+1.9%)     18.69
 =============== ================ ================ ================ =============== ================ ================ =================
+
 
 下表显示，与采用 DataParallel 的 OpenRL 相比，采用 DeepSpeed 的 OpenRL 具有更快的训练速度：
 

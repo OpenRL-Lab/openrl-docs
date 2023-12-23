@@ -4,6 +4,14 @@ openrl.runners.common package
 Submodules
 ----------
 
+openrl.runners.common.a2c\_agent module
+---------------------------------------
+
+.. automodule:: openrl.runners.common.a2c_agent
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 openrl.runners.common.base\_agent module
 ----------------------------------------
 

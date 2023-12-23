@@ -4,6 +4,14 @@ openrl.algorithms package
 Submodules
 ----------
 
+openrl.algorithms.a2c module
+----------------------------
+
+.. automodule:: openrl.algorithms.a2c
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 openrl.algorithms.base\_algorithm module
 ----------------------------------------
 

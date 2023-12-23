@@ -20,14 +20,6 @@ openrl.envs.toy\_envs.identity\_env module
    :undoc-members:
    :show-inheritance:
 
-openrl.envs.toy\_envs.multi\_input\_envs module
------------------------------------------------
-
-.. automodule:: openrl.envs.toy_envs.multi_input_envs
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 Module contents
 ---------------
 

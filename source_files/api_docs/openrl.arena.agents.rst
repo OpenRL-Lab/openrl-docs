@@ -28,6 +28,14 @@ openrl.arena.agents.local\_agent module
    :undoc-members:
    :show-inheritance:
 
+openrl.arena.agents.random\_agent module
+----------------------------------------
+
+.. automodule:: openrl.arena.agents.random_agent
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 Module contents
 ---------------
 

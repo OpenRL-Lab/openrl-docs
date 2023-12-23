@@ -297,8 +297,8 @@ Users only need to add the following parameters in the configuration file:
 Accelerate training with DeepSpeed
 ---------------------------------------------------
 
-OpenRL also provides a feature to enable DeepSpeed training in one step.
-Users first need to add two configuration file:
+OpenRL also provides a feature to enable `DeepSpeed <https://github.com/microsoft/DeepSpeed>`_ training in one step.
+Users first need to add two configuration files:
 
 .. code-block:: yaml
 
@@ -326,7 +326,7 @@ Users first need to add two configuration file:
       "fp16": {"enabled": false} # whether to use fp16
     }
 
-Next enable DeepSpeed in `nlp_ppo_ds.yaml <https://github.com/OpenRL-Lab/openrl/blob/main/examples/nlp/nlp_ppo_ds.yaml>`_.
+Next enable DeepSpeed in `nlp_ppo_ds.yaml <https://github.com/OpenRL-Lab/openrl/blob/main/examples/nlp/nlp_ppo_ds.yaml>`_ :
 
 .. code-block:: yaml
 
@@ -346,13 +346,13 @@ Next enable DeepSpeed in `nlp_ppo_ds.yaml <https://github.com/OpenRL-Lab/openrl/
 
 .. tip::
 
-    ``Episode_length`` and ``num_mini_batch`` can be found in `nlp_ppo_ds.yaml <https://github.com/OpenRL-Lab/openrl/blob/main/examples/nlp/nlp_ppo_ds.yaml>`_; 
-    ``env_num`` can be found in `train_ppo.py <https://github.com/OpenRL-Lab/openrl/blob/main/examples/nlp/train_ppo.py>`_; 
-    please ensure that all parameters meet the following relationship: ``train_batch_size = episode_length * env_num / num_mini_batch``. 
+    ``episode_length`` and ``num_mini_batch`` can be found in `nlp_ppo_ds.yaml <https://github.com/OpenRL-Lab/openrl/blob/main/examples/nlp/nlp_ppo_ds.yaml>`_ ;
+    ``env_num`` can be found in `train_ppo.py <https://github.com/OpenRL-Lab/openrl/blob/main/examples/nlp/train_ppo.py>`_ ;
+    please ensure that all parameters meet the following relationship: ``train_batch_size = episode_length * env_num / num_mini_batch`` .
 
-Finally, please run the command
+Finally, please run the command to start training:
 
-.. code-block:: yaml
+.. code-block:: bash
 
     deepspeed train_ppo.py --config nlp_ppo_ds.yaml
 
