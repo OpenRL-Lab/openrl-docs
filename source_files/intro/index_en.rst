@@ -37,10 +37,9 @@ If our work is helpful to you, please cite us:
 
 .. code-block:: bibtex
 
-    @misc{openrl2023,
-        title={OpenRL},
-        author={OpenRL Contributors},
-        publisher = {GitHub},
-        howpublished = {\url{https://github.com/OpenRL-Lab/openrl}},
-        year={2023},
+    @article{huang2023openrl,
+        title={OpenRL: A Unified Reinforcement Learning Framework},
+        author={Huang, Shiyu and Chen, Wentse and Sun, Yiwen and Bie, Fuqing and Tu, Wei-Wei},
+        journal={arXiv preprint arXiv:2312.16189},
+        year={2023}
     }
