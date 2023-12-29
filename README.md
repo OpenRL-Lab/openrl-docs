@@ -20,4 +20,4 @@ English document：
 
 # Contact Us
 
-Any question, please contact us: `huangshiyu@4paradigm.com`
+Any question, please contact us: `huangsy1314@163.com`
